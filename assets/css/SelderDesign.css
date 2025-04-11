@@ -1,17 +1,13 @@
 @charset "UTF-8";
 /*!
 =========================================================
-* Creative Design Landing page V 1.0
+* Selder Landing page
 =========================================================
 
-* Copyright: 2019 DevCRUD (https://devcrud.com)
-* Licensed: (https://devcrud.com/licenses)
-* Coded by www.devcrud.com
-
+* Copyright: 2025 SELDER (https://selder.com)
+* Coded by: ABAUTISTA.
 =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
+*/ 
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap");
 :root {
   --blue: #79A9F5;
@@ -11522,4 +11518,41 @@ section.height-auto {
 
 .section-container {
   padding: 60px 0;
+}
+
+
+
+/*/carrusel//*/
+
+/* --- Estilos para el Carrusel de Contenedores de Productos --- */
+
+/* Asegura que la sección contenedora permita el flujo normal */
+#Productos {
+  position: relative; /* Puede ser útil si necesitas posicionar algo absolutamente dentro */
+  overflow: hidden; /* Oculta slides que no están activas si usan transiciones complejas */
+}
+
+.product-slide-container {
+display: none; /* Oculta todos los contenedores/slides por defecto */
+opacity: 0;
+transition: opacity 0.6s ease-in-out;
+padding-top: 2rem; /* Añade espacio arriba si es necesario */
+padding-bottom: 2rem; /* Añade espacio abajo antes de los botones */
+}
+
+.product-slide-container.active {
+display: block; /* Muestra solo el contenedor activo */
+opacity: 1; /* Hace visible el activo */
+}
+
+/* Estilo opcional para los botones si quieres personalizarlos más */
+#product-carousel-prev,
+#product-carousel-next {
+  min-width: 120px;
+}
+
+/* Asegura que el contenedor de botones tenga espacio */
+#Productos > .container.text-center.my-4 {
+  position: relative; /* Para asegurar que esté en el flujo normal */
+  z-index: 10; /* Para que esté sobre cualquier elemento que se desborde */
 }

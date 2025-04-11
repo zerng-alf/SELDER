@@ -111,7 +111,7 @@
     </section><!--End of Section -->
 
     <!-- Testmonial Section -->
-    <section class="text-center pt-5" id="testmonial">
+    <section class="text-center pt-5" id="#">
         <!-- Container -->
         <div class="container">
             <h3 class="mt-3 mb-5 pb-5">Nuestro Compromiso</h3>
@@ -178,33 +178,381 @@
         <h1 class="display-4">¿Que fabricamos?.</h1>
     </section><!-- End of Section -->
 
-    <!-- section -->
-    <section id="Productos">
-        <!-- Container -->
-        <div class="container">
-            <!-- row -->
-            <div class="row justify-content-between align-items-center">
-                <div class="col-md-6">
-                    <div class="img-wrapper">
-                        <div class="after"></div>
-                        <img src="assets/imgs/imgFarmaco/03.jpg" class="w-100" alt="About Us">
+    <!-- <section class="product-style">
+        <style>
+
+            .product-style {
+            height: 100vh;
+            /* Degradado con colores originales */
+            background-image: linear-gradient(165deg, white, white 50%, #ffdb5c 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+
+            .card {
+            background-color: #fff;
+            padding: 15px;
+            width: 600px;
+            height: 370px;
+            box-shadow: 0 2px 23px rgba(93, 71, 4, 0.16); /* Conversión de rgba con hex a RGB */
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            }
+
+            .card .product-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            background-image: url(assets/imgs/imgFarmaco/CONDIL.png);
+            background-size: 667px 378px;
+            background-position: center center;
+            clip-path: polygon(0 0, 280px 0, 370px 100%, 0% 100%); /* Forma de recorte */
+            }
+
+            .card-block {
+            width: 230px;
+            display: flex;
+            flex-direction: column;
+            left: 500px;
+            }
+
+            .card-footer {
+            margin-top: auto; /* Empuja el footer hacia abajo en contenedores flex */
+            }
+        </style>
+
+        <div class="card">
+            <div class="product-bg"></div>
+            <div class="card-block">
+                <div class="card-header">
+                    <h1>Pastel</h1>
+                    <h2>Empanadillas que no puedes dejar de comer</h2>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nihil accusantium voluptate delectus
+                        porro dolorem ad, temporibus vel esse aperiam odit facere laudantium deserunt! Beatae non quos
+                        repellendus hic esse.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <p>Ingredientes: harina, carne de pata, repollo</p>
+                    <a class="btn" href="#">Añadir al carrito</a>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!--<section>
+   
+        <style>
+            #box .card {
+                position: relative;
+                display: grid;
+                grid-template-rows: 380px 120px;
+                grid-template-areas: "products" "footer";
+                background: #FFFFFF;
+                width: 100%;
+                height: 100%;
+                max-height: 450px;
+                max-width: 300px;
+                margin: 10px auto;
+                border-radius: 12px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+                box-sizing: border-box;
+                padding: 25px;
+                text-align: center;
+            }
+
+            #box .card .products {
+                grid-area: products;
+            }
+
+            #box .card .footer {
+                grid-area: footer;
+            }
+
+            #box .card-products {
+                grid-area: products;
+                position: relative;
+                overflow: hidden;
+
+                -webkit-transition: 0.5s ease;
+                transition: 0.5s ease;
+            }
+
+            #box .card-product {
+                position: absolute;
+                display: grid;
+                grid-template-rows: 250px 35px 100px;
+                grid-template-areas: "thumbnail" "title"
+                    "description";
+                opacity: 0;
+                width: 100%;
+                visibility: hidden;
+                -webkit-transition: 0.5s ease;
+                transition: 0.5s ease;
+            }
+
+            #box .card-product.active {
+                opacity: 1;
+                visibility: visible !important;
+
+            }
+
+            #box .card .card-products .card-product .card-thumbnail {
+                grid-area: thumbnail;
+            }
+
+            #box .card .card-footer .card-product .card-title {
+                grid-area: title;
+            }
+
+            #box .card .card-footer .card-product .card-description {
+                grid-area: description;
+            }
+
+            #box .card-thumbnail {
+                grid-area: thumbnail;
+                max-width: 250px;
+                max-height: 250px;
+                width: 100%;
+                height: 100%;
+                background: url("https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80") no-repeat center /cover;
+                position: relative;
+
+            }
+
+            #box .card-title {
+                grid-area: title;
+
+                color: #D18B49;
+                font-size: 24px;
+                -webkit-transition: 0.5s ease;
+                transition: 0.5s ease;
+            }
+
+            #box .card-description {
+                grid-area: description;
+
+
+            }
+
+            #box .card-footer {
+                grid-area: footer;
+                display: -webkit-box;
+                display: inline-flex;
+                horizontal;
+                -webkit-box-direction: normal;
+                flex-direction: row;
+                -webkit-box-pack: justify;
+                justify-content: space-between;
+
+            }
+
+            #box .card-btn {
+                border-radius: 2px;
+                color: #D18B49;
+                text-decoration: none;
+                -webkit-transition: 0.5s ease;
+                transition: 0.5s ease;
+            }
+
+            #box .icon::before {
+                display: inline-block;
+                font-style: normal;
+                font-size: 2em;
+                font-variant: normal;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            #box .prev::before {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f060";
+            }
+
+            #box .next::before {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f061";
+            }
+
+            #box [ripple] {
+                z-index: 1;
+                position: relative;
+                overflow: hidden;
+            }
+
+            #box [ripple] .ripple {
+                position: absolute;
+                background: #FFFFFF;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                -webkit-transform: scale(0);
+                transform: scale(0);
+                -webkit-animation: ripple 2s;
+                animation: ripple 2s;
+            }
+
+            @-webkit-keyframes ripple {
+                0% {
+                    -webkit-transform: scale(0);
+                    transform: scale(0);
+                    opacity: 0.2;
+                }
+
+                100% {
+                    -webkit-transform: scale(50);
+                    transform: scale(50);
+                    opacity: 0;
+                }
+            }
+
+            @keyframes ripple {
+                0% {
+                    -webkit-transform: scale(0);
+                    transform: scale(0);
+                    opacity: 0.2;
+                }
+
+                100% {
+                    -webkit-transform: scale(50);
+                    transform: scale(50);
+                    opacity: 0;
+                }
+            }
+        </style>
+        <div id="box">
+            <div class="card">
+                <div class="card-products">
+                    <div class="card-product active" product-id="1">
+                        <div class="card-thumbnail"></div>
+                        <h1 class="card-title">Product 1</h1>
+                        <p class="card-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+                            nibh, ut fermentum massa justo sit amet risus.</p>
+                    </div>
+                    <div class="card-product" product-id="2">
+                        <div class="card-thumbnail"></div>
+                        <h1 class="card-title">Product 2</h1>
+                        <p class="card-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+                            nibh, ut fermentum massa justo sit amet risus.</p>
+                    </div>
+                    <div class="card-product" product-id="3">
+                        <div class="card-thumbnail"></div>
+                        <h1 class="card-title">The Sneaky Mouse</h1>
+                        <p class="card-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+                            nibh, ut fermentum massa justo sit amet risus.</p>
+                    </div>
+                    <div class="card-product" product-id="4">
+                        <div class="card-thumbnail"></div>
+                        <h1 class="card-title">The Sneaky Mouse</h1>
+                        <p class="card-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+                            nibh, ut fermentum massa justo sit amet risus.</p>
+                    </div>
+                    <div class="card-product" product-id="5">
+                        <div class="card-thumbnail"></div>
+                        <h1 class="card-title">The Sneaky Mouse</h1>
+                        <p class="card-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+                            nibh, ut fermentum massa justo sit amet risus.</p>
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <h6 class="title mb-3">Lorem ipsum dolor sit amet, consectetur.</h6>
+                <div class="card-footer"><a class="card-btn" id="prev" href="#" ripple="" ripple-color="#666666"><span
+                            class="icon prev"></span></a>
+                    <a class="card-btn" id="next" href="#" ripple="" ripple-color="#666666"><span
+                            class="icon next"></span></a>
+                </div>
+            </div>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae autem rem impedit molestiae hic
-                        ducimus, consequuntur ullam dolorem quaerat beatae labore explicabo, sint laboriosam aperiam
-                        nihil inventore facilis. Quasi, facilis.</p>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, amet!
-                    </p>
-                    <button class="btn btn-outline-primary btn-sm">Learn More</button>
+        </div>
+    </section>-->
+
+    <section id="Productos">
+
+        <!-- Slide 1: Container -->
+        <div class="container product-slide-container active"> <!-- Añadida clase y active -->
+            <!-- row -->
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-5">
+                    <div class="img-wrapper">
+                        <div class="after"></div>
+                        <img src="assets/imgs/imgFarmaco/condillateral.png" class="w-100" alt="Producto 1">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <h6 class="title mb-3">Título Producto 1</h6>
+                    <p>Descripción detallada del Producto 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Quae autem rem impedit molestiae hic.</p>
+                    <p class="text-muted">Algún detalle adicional o subtítulo para Producto 1.</p>
+                    <button class="btn btn-outline-primary btn-sm">Ver Más</button>
                 </div>
             </div>
             <!-- End of Row -->
         </div>
-        <!-- End of Container -->
-    </section><!-- End of Section -->
+        <!-- End of Slide 1 Container -->
+
+        <!-- Slide 2: Container -->
+        <div class="container product-slide-container">
+            <!-- Row -->
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-5">
+                    <div class="img-wrapper">
+                        <div class="after"></div>
+                        <img src="assets/imgs/imgFarmaco/CONDIL(1).png" class="w-100" alt="Producto 3">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <h6 class="title mb-3">Título Producto 3</h6>
+                    <p>Descripción detallada del Producto 3. Sint laboriosam aperiam nihil inventore facilis. Quasi,
+                        facilis.</p>
+                    <p class="text-muted">Algún detalle adicional o subtítulo para Producto 3.</p>
+                    <button class="btn btn-outline-primary btn-sm">Ver Más</button>
+                </div>
+            </div><!-- End of Row -->
+        </div>
+        <!-- End of Slide 2 Container -->
+
+        <!-- Slide 3: Container -->
+        <div class="container product-slide-container"> <!-- Añadida clase -->
+            <!-- Row -->
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-5">
+                    <div class="img-wrapper">
+                        <div class="after"></div>
+                        <img src="assets/imgs/imgFarmaco/frascoCondil(2).png" class="w-100" alt="Producto 3">
+                        <!-- Cambia src y alt -->
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <h6 class="title mb-3">Título Producto 3</h6> <!-- Cambia título -->
+                    <p>Descripción detallada del Producto 3. Sint laboriosam aperiam nihil inventore facilis. Quasi,
+                        facilis.</p>
+                    <p class="text-muted">Algún detalle adicional o subtítulo para Producto 3.</p>
+                    <button class="btn btn-outline-primary btn-sm">Ver Más</button>
+                </div>
+            </div><!-- End of Row -->
+        </div>
+        <!-- End of Slide 3 Container -->
+
+        <!-- Controles de Navegación del Carrusel (Dentro de la misma sección) -->
+        <div class="container text-center my-4"> <!-- Contenedor para centrar botones -->
+            <button id="product-carousel-prev" class="btn btn-primary mr-2">
+                <i class="ti-angle-left"></i> <span class="d-none d-md-inline">Anterior</span>
+            </button>
+            <button id="product-carousel-next" class="btn btn-primary">
+                <span class="d-none d-md-inline">Siguiente</span> <i class="ti-angle-right"></i>
+            </button>
+        </div>
+        <!-- FIN Controles de Navegación -->
+
+    </section>
+    <!-- End of Section PRODUCTOS CAROUSEL -->
 
     <!-- section -->
     <section>
@@ -232,26 +580,29 @@
         </div><!-- End of Container-->
     </section><!-- End of Section -->
 
-    <div class="section-container">
+    <div id="testmonial" class="section-container">
         <div class="container text-center">
             <div class="row section-container-spacer">
                 <div class="col-xs-12 col-md-12">
-                    <h2 class="text-center">Customers</h2>
-                    <p>Praesent at feugiat est, at faucibus ipsum. Aenean condimentum mauris vel malesuada pulvinar.
-                        <br>Vestibulum sit amet hendrerit leo, quis vehicula mi.</p>
+                    <h2 class="text-center">Nuetros Clientes</h2>
+                    <p style="margin-bottom: 50px; margin-top: 20px;">Praesent at feugiat est, at faucibus ipsum. Aenean
+                        condimentum mauris vel malesuada pulvinar.
+                        <br>Vestibulum sit amet hendrerit leo, quis vehicula mi.
+                    </p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-bottom: 20px;">
                 <div class="col-xs-12 col-md-4">
-                    <img src="./assets/images/logo-01.png" alt="" class="img-responsive reveal-content image-center">
-
-                </div>
-
-                <div class="col-xs-12 col-md-4">
-                    <img src="./assets/images/logo-02.png" alt="" class="img-responsive reveal-content image-center">
+                    <img src="/public_html/assets/imgs/logo-01.png" alt=""
+                        class="img-responsive reveal-content image-center">
                 </div>
                 <div class="col-xs-12 col-md-4">
-                    <img src="./assets/images/logo-03.png" alt="" class="img-responsive reveal-content image-center">
+                    <img src="/public_html/assets/imgs/logo-02.png" alt=""
+                        class="img-responsive reveal-content image-center">
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <img src="/public_html/assets/imgs/logo-03.png" alt=""
+                        class="img-responsive reveal-content image-center">
                 </div>
             </div>
         </div>
