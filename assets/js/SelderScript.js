@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
 let currentCaptcha;
 const characters = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 
-function generateSecureCaptcha() {
+function generateNewCaptcha() {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     canvas.width = 280;
@@ -279,8 +279,8 @@ function drawRandomShape(ctx, canvas, type) {
     }
 }
 // Generar CAPTCHA al cargar y redimensionar ventana
-window.addEventListener('load', generateSecureCaptcha);
-window.addEventListener('resize', generateSecureCaptcha);
+window.addEventListener('load', generateNewCaptcha);
+window.addEventListener('resize', generateNewCaptcha);
 
 // Inicializar CAPTCHA
 generateNewCaptcha();
