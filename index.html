@@ -8,6 +8,9 @@
     <meta name="author" content="Selder S.A. DE C.V.">
     <title>Selder</title>
 
+    <!-- sweetalert2  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
 
@@ -688,7 +691,7 @@
     <section id="contact" class="section has-img-bg pb-0">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-5 my-3">
+                <div class="col-md-5 " style="margin-top:-15rem">
                     <h6 class="mb-0">Telefono</h6>
                     <p class="mb-4" style="color: #e7dcdc;">+52 55 5662-5009</p>
 
@@ -703,31 +706,51 @@
                     <p class="mb-0" style="color: #e7dcdc;">info@website.com</p>
                 </div>
                 <div class="col-md-7">
-                    <form>
+                    <form id="contactForm">
                         <h1>CONTACTANOS</h1>
-                        <p class="mb-3" style="color: #e7dcdc;">Si tiene alguna pregunta o necesita ayuda, ¡contáctenos!
-                        </p>
-                        <div class="form-row">
-                            <div class="form-group col-sm-4">
-                                <input type="text" class="form-control text-white rounded-0 bg-transparent" name="name"
-                                    placeholder="Name">
-                            </div>
-                            <div class="form-group col-sm-4">
-                                <input type="email" class="form-control text-white rounded-0 bg-transparent"
-                                    name="Email" placeholder="Email">
-                            </div>
-                            <div class="form-group col-sm-4">
-                                <input type="text" class="form-control text-white rounded-0 bg-transparent"
-                                    name="subject" placeholder="Subject">
-                            </div>
-                            <div class="form-group col-12">
-                                <textarea name="message" id="" cols="30" rows="4"
-                                    class="form-control text-white rounded-0 bg-transparent"
-                                    placeholder="Message"></textarea>
+                        <p class="mb-3" style="color: #e7dcdc;">¡Si tienes alguna pregunta o necesitas ayuda,
+                            contáctanos!</p>
 
+                        <div class="form-row">
+                            <!-- Campos del formulario -->
+                            <div class="form-group col-sm-4 mb-3">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="name"
+                                    placeholder="Nombre" required>
                             </div>
+
+                            <div class="form-group col-sm-4 mb-3">
+                                <input type="email" class="form-control text-white rounded-0 bg-transparent" id="email"
+                                    placeholder="Correo electrónico" required>
+                            </div>
+
+                            <div class="form-group col-sm-4 mb-3">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="subject"
+                                    placeholder="Asunto" required>
+                            </div>
+
+                            <div class="form-group col-12 mb-3">
+                                <textarea id="message" cols="30" rows="4"
+                                    class="form-control text-white rounded-0 bg-transparent" placeholder="Mensaje"
+                                    required></textarea>
+                            </div>
+
+                            <!-- CAPTCHA Mejorado -->
+                            <div class="form-group col-6 mb-4">
+                                <div class="captcha-container">
+                                    <label class="form-label text-white">Verificación de seguridad:</label>
+                                    <div id="captchaImage" class="mb-2 captcha-image-container"></div>
+                                    <input type="text" class="form-control text-white rounded-0 bg-transparent"
+                                        id="captchaAnswer" placeholder="Ingrese el texto de la imagen" required>
+                                    <button type="button" class="btn btn-link p-0 mt-2 text-white"
+                                        onclick="generateSecureCaptcha()">
+                                        <small>¿No ves bien el código? Generar nuevo</small>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Botón de enviar -->
                             <div class="form-group col-12 mb-0">
-                                <button type="submit" class="btn btn-primary rounded w-md mt-3">Send</button>
+                                <button type="submit" class="btn btn-primary rounded w-md mt-3">Enviar</button>
                             </div>
                         </div>
                     </form>

@@ -11556,3 +11556,30 @@ opacity: 1; /* Hace visible el activo */
   position: relative; /* Para asegurar que esté en el flujo normal */
   z-index: 10; /* Para que esté sobre cualquier elemento que se desborde */
 }
+
+
+
+/*////CAPCHA//*/
+
+
+/* Estilos esenciales para el CAPTCHA */
+.captcha-image-container {
+  background: #2a2a2a;
+  border-radius: 6px;
+  padding: 12px;
+  border: 1px solid #4a4a4a;
+}
+
+.captcha-image-container img {
+  width: 100%;
+  height: auto;
+  image-rendering: crisp-edges;
+}
+
+.captcha-container button {
+  font-size: 0.9rem;
+}
+
+.captcha-container button:hover {
+  text-decoration: underline;
+}
