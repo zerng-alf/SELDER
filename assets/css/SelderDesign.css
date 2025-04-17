@@ -11180,7 +11180,7 @@ nav.page-navbar.affix .navbar-brand .text-dark {
   text-align: center;
   color: white;
   position: relative;
-  height: 598px;
+  height: 643px;
   position: relative;
 }
 
@@ -11269,7 +11269,7 @@ section.p-md {
 }
 
 section.has-bg-img {
-  background-image: url(../imgs/imgFarmaco/img-pastillas.jpg);
+ background-image: url(../imgs/imgFarmaco/img-pastillas.jpg);
   background-size: cover;
   background-position: center;
   min-height: 450px;

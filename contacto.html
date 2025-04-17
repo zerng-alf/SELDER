@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Selder landing page.">
+    <meta name="author" content="Selder S.A. DE C.V.">
+    <title>Selder</title>
+
+    <!-- sweetalert2  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+
+    <!-- Bootstrap + Creative Design main styles -->
+    <link rel="stylesheet" href="assets/css/SelderDesign.css">
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page Navbar -->
+    <nav id="scrollspy" class="navbar page-navbar navbar-light navbar-expand-md fixed-top" data-spy="affix"
+        data-offset-top="20">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/imgs/imgFarmaco/selder.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testmonial">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="maquila.html">Maquila</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="farmaco.html">Farmaco Vigilancia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item ml-md-4">
+                        <a class="nav-link btn btn-primary" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav><!-- End of Page Navbar -->
+
+    <!-- Page Header -->
+    <header id="home" class="header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <h2>Soluciones farmacéuticas para un futuro más saludable.</h2>
+            <a class="btn btn-outline-light" href="#about">Nuestros productos</a>
+        </div>
+    </header><!-- End of Page Header -->
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section has-img-bg pb-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 " style="margin-top:-15rem">
+                    <h6 class="mb-0">Telefono</h6>
+                    <p class="mb-4" style="color: #e7dcdc;">+52 55 5662-5009</p>
+
+                    <h6 class="mb-0">Dirección</h6>
+                    <p class="mb-4" style="color: #e7dcdc;">Fernado Villalpando N° 48, Col Guadalupe Inn C.P 01020,
+                        </br>Alvaro Obregon CDMX.</p>
+
+                    <h6 class="mb-0">Email</h6>
+                    <p class="mb-4" style="color: #e7dcdc;">info@website.com</p>
+
+                    <h6 class="mb-0">Aviso de privacidad</h6>
+                    <p class="mb-0" style="color: #e7dcdc;">info@website.com</p>
+                </div>
+                <div class="col-md-7">
+                    <form id="contactForm">
+                        <h1>CONTACTANOS</h1>
+                        <p class="mb-3" style="color: #e7dcdc;">¡Si tienes alguna pregunta o necesitas ayuda,
+                            contáctanos!</p>
+
+                        <div class="form-row">
+                            <!-- Campos del formulario -->
+                            <div class="form-group col-sm-4 mb-3">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="name"
+                                    placeholder="Nombre" required>
+                            </div>
+
+                            <div class="form-group col-sm-4 mb-3">
+                                <input type="email" class="form-control text-white rounded-0 bg-transparent" id="email"
+                                    placeholder="Correo electrónico" required>
+                            </div>
+
+                            <div class="form-group col-sm-4 mb-3">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="subject"
+                                    placeholder="Asunto" required>
+                            </div>
+
+                            <div class="form-group col-12 mb-3">
+                                <textarea id="message" cols="30" rows="4"
+                                    class="form-control text-white rounded-0 bg-transparent" placeholder="Mensaje"
+                                    required></textarea>
+                            </div>
+
+                            <!-- CAPTCHA Mejorado -->
+                            <div class="form-group col-6 mb-4">
+                                <div class="captcha-container">
+                                    <label class="form-label text-white">Verificación de seguridad:</label>
+                                    <div id="captchaImage" class="mb-2 captcha-image-container"></div>
+                                    <input type="text" class="form-control text-white rounded-0 bg-transparent"
+                                        id="captchaAnswer" placeholder="Ingrese el texto de la imagen" required>
+                                    <button type="button" class="btn btn-link p-0 mt-2 text-white"
+                                        onclick="generateNewCaptcha()">
+                                        <small>¿No ves bien el código? Generar nuevo</small>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Botón de enviar -->
+                            <div class="form-group col-12 mb-0">
+                                <button type="submit" class="btn btn-primary rounded w-md mt-3">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Page Footer -->
+            <footer class="mt-5 py-4 border-top border-secondary">
+                <p class="mb-0 small" style="color: #e7dcdc;">Created By <a href="#about" target="_blank">Selder.</a>
+                    &copy;
+                    <script>document.write(new Date().getFullYear())</script> All rights reserved
+                </p>
+            </footer>
+            <!-- End of Page Footer -->
+        </div>
+    </section>
+
+    <!-- Section -->
+    <section class="pb-0">
+        <!-- Container -->
+        <div class="container">
+            <!-- Pre footer -->
+            <div class="pre-footer">
+                <ul class="list">
+
+                    <a class="navbar-brand" href="#">
+                        <img src="assets/imgs/imgFarmaco/selder.png" alt="">
+                    </a>
+                    <li class="list-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae nobis fugit maxime deleniti
+                            minus optio accusamus, quam maiores explicabo sunt.</p>
+                        <a href="#"><strong class="text-primary">Selder</strong> <span class="text-dark">S.A. DE
+                                C.V.</span></a>
+                    </li>
+                </ul>
+                <ul class="list">
+                    <li class="list-head">
+                        <h6 class="font-weight-bold"></h6>
+                    </li>
+                    <li class="list-body">
+                        <div class="row">
+                            <div class="col">
+                                <a href="#"></a>
+                                <a href="#"> </a>
+                                <a href="#"></a>
+                                <a href="#"></a>
+                            </div>
+                            <div class="col">
+                                <a href="#"></a>
+                                <a href="#"></a>
+                                <a href="#"></a>
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="list">
+                    <li class="list-head">
+                        <h6 class="font-weight-bold">INFORMACIÓN DE CONTACTO</h6>
+                    </li>
+                    <li class="list-body">
+                        <p>Contáctanos y nos comunicaremos contigo dentro de 24 horas.</p>
+                        <p><i class="ti-location-pin"></i>Fernado Villalpando N° 48, Col Guadalupe Inn C.P 01020, Alvaro
+                            Obregon CDMX.</p>
+                        <p><i class="ti-email"></i> info@website.com</p>
+                        <div class="social-links">
+                            <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
+                            <!--<a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>-->
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- End of Pre footer -->
+
+            <!-- foooter -->
+            <footer class="footer">
+                <p>Copyright
+                    <script>document.write(new Date().getFullYear())</script> &copy; <a href="#">Selder</a>
+                </p>
+            </footer><!-- End of Footer-->
+
+        </div><!--End of Container -->
+    </section><!-- End of Section -->
+
+    <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Creative Design js -->
+    <script src="assets/js/SelderScript.js"></script>
+
+</body>
+
+</html>
