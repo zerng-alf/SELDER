@@ -30,6 +30,33 @@ $(document).ready(function () {
 
 /*///////////*/
 
+// protfolio filters
+$(window).on("load", function() {
+    var t = $(".portfolio-container");
+    t.isotope({
+        filter: ".new",
+        animationOptions: {
+            duration: 750,
+            easing: "linear",
+            queue: !1
+        }
+    }), $(".filters a").click(function() {
+        $(".filters .active").removeClass("active"), $(this).addClass("active");
+        var i = $(this).attr("data-filter");
+        return t.isotope({
+            filter: i,
+            animationOptions: {
+                duration: 750,
+                easing: "linear",
+                queue: !1
+            }
+        }), !1
+    })
+})
+
+
+/*///////////*/
+
 jQuery(document).ready(function ($) {
 
     // --- Lógica del Carrusel de Contenedores de Productos ---
@@ -112,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Generador de CAPTCHA ultra seguro
 let currentCaptcha;
-const characters = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+const characters = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjiklmnopqrstuvwxyz123456789!?¡¿@$%&';
 
 function generateNewCaptcha() {
     const canvas = document.createElement('canvas');
