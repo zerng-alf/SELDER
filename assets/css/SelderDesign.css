@@ -11397,7 +11397,7 @@ section.height-auto {
 }
 
 .section-title {
-  font-size: 4rem;
+  font-size: 2.5rem;
 }
 
 .has-height-xs {
@@ -11841,23 +11841,82 @@ img.tower {
   opacity: 1;
 }
 
-
-
-
 /*//////////////lineas title////////////////*/
 
-.selder-title .titulo{
+.selder-title .titulo {
   align-items: center;
   display: flex;
   flex-wrap: nowrap;
   height: fit-content;
   justify-content: center;
+  gap: 10px; /* Espaciado entre las líneas y el texto */
+  margin-bottom: 20px !important;/* Espacio debajo del título */
 }
 
-.selder-title .line-title  {
-  color: var(--selder);
+.selder-title .line-title {
+  background-color: var(--selder); /* Asegúrate de usar el color correcto */
   height: 5px;
-  width: 100%;
+  width: 100px; /* Ajusta el ancho de las líneas según sea necesario */
 }
 
+/* Estilos básicos del navbar */
+.navbar {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
 
+.navbar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 5px 10px;
+  display: inline-block;
+}
+
+.nav-link:hover {
+  color: #FAD02C;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px 0;
+  display: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #FAD02C;
+  color: #fff;
+}
+
+/* Mostrar el menú al pasar el cursor */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}

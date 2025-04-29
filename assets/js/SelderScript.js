@@ -374,3 +374,13 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         generateNewCaptcha();
     });
 });
+
+
+
+document.querySelectorAll('.dropdown-toggle').forEach(item => {
+    item.addEventListener('click', function (e) {
+        e.preventDefault();
+        const dropdownMenu = this.nextElementSibling;
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    });
+});
