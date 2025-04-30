@@ -11557,6 +11557,16 @@ section.height-auto {
   padding: 60px 0;
 }
 
+.contact1 {
+  margin-top:-15rem;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) { /* Puedes ajustar el ancho según tus necesidades */
+  .contact1 {
+    margin-top: 0; /* Elimina el margin-top negativo */
+  }
+}
 
 
 /*/carrusel//*/
@@ -11924,3 +11934,6 @@ img.tower {
 .nav-item.dropdown:hover .dropdown-menu {
   display: block;
 }
+
+
+
