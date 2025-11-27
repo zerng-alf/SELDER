@@ -316,13 +316,17 @@ generateNewCaptcha();
 document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Obtener valores
+    // Obtener valores del formulario de farmacovigilancia
     const campos = {
-        name: document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        subject: document.getElementById('subject').value.trim(),
-        message: document.getElementById('message').value.trim(),
-        captcha: document.getElementById('captchaAnswer').value.trim().toUpperCase()
+        'Nombre de la persona a contactar': document.getElementById('nombre_contacto').value.trim(),
+        'Correo electrónico': document.getElementById('correo').value.trim(),
+        'Teléfono': document.getElementById('telefono').value.trim(),
+        'Dirección': document.getElementById('direccion').value.trim(),
+        'Nombre del producto': document.getElementById('nombre_producto').value.trim(),
+        'Lote': document.getElementById('lote').value.trim(),
+        'Fecha de caducidad': document.getElementById('fecha_caducidad').value.trim(),
+        'Descripción de la queja': document.getElementById('descripcion_queja').value.trim(),
+        'CAPTCHA': document.getElementById('captchaAnswer').value.trim()
     };
 
     // Validar campos vacíos
@@ -331,7 +335,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
             Swal.fire({
                 icon: 'error',
                 title: 'Campo vacío',
-                text: `Por favor complete el campo: ${campo === 'captcha' ? 'CAPTCHA' : campo}`,
+                text: `Por favor complete el campo: ${campo}`,
                 confirmButtonColor: '#3085d6'
             });
             return;
@@ -340,7 +344,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 
     // Validar email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(campos.email)) {
+    if (!emailRegex.test(campos['Correo electrónico'])) {
         Swal.fire({
             icon: 'error',
             title: 'Email inválido',
@@ -350,8 +354,8 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         return;
     }
 
-    // Validar CAPTCHA
-    if (campos.captcha !== currentCaptcha) {
+    // Validar CAPTCHA (case-insensitive)
+    if (campos['CAPTCHA'].toLowerCase() !== currentCaptcha.toLowerCase()) {
         Swal.fire({
             icon: 'error',
             title: 'CAPTCHA incorrecto',
@@ -366,8 +370,8 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     // Si todo es válido
     Swal.fire({
         icon: 'success',
-        title: '¡Mensaje enviado!',
-        text: 'Gracias por contactarnos, te responderemos pronto.',
+        title: '¡Queja enviada!',
+        text: 'Gracias por su reporte, lo atenderemos pronto.',
         confirmButtonColor: '#3085d6'
     }).then(() => {
         this.reset();

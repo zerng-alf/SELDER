@@ -130,51 +130,51 @@
                     <p class="mb-0" style="color: #e7dcdc;">info@website.com</p>
                 </div>
                 <div class="col-md-7">
-                    <form id="contactForm">
-                        <h1>CONTACTANOS</h1>
-                        <p class="mb-3" style="color: #e7dcdc;">¡Si tienes alguna pregunta o necesitas ayuda,
-                            contáctanos!</p>
+                    <form id="farmacoForm">
+                        <h4 class="mb-4 text-center">Reporte de Farmacovigilancia</h4>
+                        <p class="mb-4 text-center" style="color: #e7dcdc;">Utilice este formulario para reportar cualquier sospecha de reacción adversa a un medicamento.</p>
 
                         <div class="form-row">
-                            <!-- Campos del formulario -->
-                            <div class="form-group col-sm-4 mb-3">
-                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="name"
-                                    placeholder="Nombre" required>
+                            <div class="form-group col-sm-6 mb-3">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="farmaco_nombre_contacto" placeholder="Nombre de la persona a contactar" required>
                             </div>
-
-                            <div class="form-group col-sm-4 mb-3">
-                                <input type="email" class="form-control text-white rounded-0 bg-transparent" id="email"
-                                    placeholder="Correo electrónico" required>
+                            <div class="form-group col-sm-6 mb-3">
+                                <input type="email" class="form-control text-white rounded-0 bg-transparent" id="farmaco_correo" placeholder="Correo electrónico" required>
                             </div>
-
-                            <div class="form-group col-sm-4 mb-3">
-                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="subject"
-                                    placeholder="Asunto" required>
+                            <div class="form-group col-sm-6 mb-3">
+                                <input type="tel" class="form-control text-white rounded-0 bg-transparent" id="farmaco_telefono" placeholder="Teléfono" required>
                             </div>
-
+                            <div class="form-group col-sm-6 mb-3">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="farmaco_direccion" placeholder="Dirección" required>
+                            </div>
+                            <div class="form-group col-sm-4 mb-3">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="farmaco_nombre_producto" placeholder="Nombre del producto" required>
+                            </div>
+                            <div class="form-group col-sm-4 mb-3">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="farmaco_lote" placeholder="Lote">
+                            </div>
+                            <div class="form-group col-sm-4 mb-3">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="farmaco_fecha_caducidad" placeholder="Fecha de caducidad (MM/AAAA)">
+                            </div>
                             <div class="form-group col-12 mb-3">
-                                <textarea id="message" cols="30" rows="4"
-                                    class="form-control text-white rounded-0 bg-transparent" placeholder="Mensaje"
-                                    required></textarea>
+                                <textarea id="farmaco_descripcion_queja" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Descripción de la queja" required></textarea>
                             </div>
 
                             <!-- CAPTCHA Mejorado -->
-                            <div class="form-group col-6 mb-4">
+                            <div class="form-group col-md-6 mb-4">
                                 <div class="captcha-container">
                                     <label class="form-label text-white">Verificación de seguridad:</label>
                                     <div id="captchaImage" class="mb-2 captcha-image-container"></div>
-                                    <input type="text" class="form-control text-white rounded-0 bg-transparent"
-                                        id="captchaAnswer" placeholder="Ingrese el texto de la imagen" required>
-                                    <button type="button" class="btn btn-link p-0 mt-2 text-white"
-                                        onclick="generateNewCaptcha()">
+                                    <input type="text" class="form-control text-white rounded-0 bg-transparent" id="captchaAnswer" placeholder="Ingrese el texto de la imagen" required>
+                                    <button type="button" class="btn btn-link p-0 mt-2 text-white" onclick="generateNewCaptcha()">
                                         <small>¿No ves bien el código? Generar nuevo</small>
                                     </button>
                                 </div>
                             </div>
 
                             <!-- Botón de enviar -->
-                            <div class="form-group col-12 mb-0">
-                                <button type="submit" class="btn btn-primary rounded w-md mt-3">Enviar</button>
+                            <div class="form-group col-12 mb-0 text-center">
+                                <button type="submit" class="btn btn-primary rounded w-md mt-3">Enviar Reporte</button>
                             </div>
                         </div>
                     </form>
