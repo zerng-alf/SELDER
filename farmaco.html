@@ -111,84 +111,197 @@
     </section>
     <!-- End OF About Section -->
 
+
+
     <!-- Contact Section -->
-    <section id="contact" class="section has-img-bg pb-0">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-5 " style="margin-top:-15rem">
-                    <h6 class="mb-0">Telefono</h6>
-                    <p class="mb-4" style="color: #e7dcdc;">+52 55 5662-5009</p>
+    <section id="contact-quejas" class="section has-img-bg pb-0" style="padding-top: 60px; padding-bottom: 60px;">
+    <div class="overlay" style="background: rgba(0,0,0,0.6); position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+    
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="row align-items-start">
+            
+            <div class="col-md-3 mb-5 text-white">
+                <h2 class="mb-4">Contáctanos</h2>
+                <p class="mb-5" style="color: #e7dcdc;">Si presentas alguna sospecha de reacción adversa, estamos aquí para ayudarte.</p>
 
-                    <h6 class="mb-0">Dirección</h6>
-                    <p class="mb-4" style="color: #e7dcdc;">Fernado Villalpando N° 48, Col Guadalupe Inn C.P 01020,
-                        </br>Alvaro Obregon CDMX.</p>
+                <h6 class="mb-1 text-primary">Teléfono</h6>
+                <p class="mb-4" style="color: #e7dcdc;">+52 55 5662-5009</p>
 
-                    <h6 class="mb-0">Email</h6>
-                    <p class="mb-4" style="color: #e7dcdc;">info@website.com</p>
+                <h6 class="mb-1 text-primary">Dirección</h6>
+                <p class="mb-4" style="color: #e7dcdc;">Fernado Villalpando N° 48, Col Guadalupe Inn C.P 01020,<br>Alvaro Obregon CDMX.</p>
 
-                    <h6 class="mb-0">Aviso de privacidad</h6>
-                    <p class="mb-0" style="color: #e7dcdc;">info@website.com</p>
-                </div>
-                <div class="col-md-7">
+                <h6 class="mb-1 text-primary">Email</h6>
+                <p class="mb-4" style="color: #e7dcdc;">info@website.com</p>
+
+                <h6 class="mb-1 text-primary">Aviso de privacidad</h6>
+                <p class="mb-0" style="color: #e7dcdc;">info@website.com</p>
+            </div>
+
+            <div class="col-md-9">
+                
+                <div class="form-card bg-white p-4 rounded shadow">
                     <form id="farmacoForm">
-                        <h4 class="mb-4 text-center">Reporte de Farmacovigilancia</h4>
-                        <p class="mb-4 text-center" style="color: #e7dcdc;">Utilice este formulario para reportar cualquier sospecha de reacción adversa a un medicamento.</p>
+                        
+                        <div class="progress-container mb-4 d-flex justify-content-between text-center">
+                            <div class="progress-step active" data-step="1" style="flex:1; border-bottom:3px solid #FAD02C; font-weight:bold; cursor:pointer;">1. Notificador</div>
+                            <div class="progress-step" data-step="2">2. Paciente</div>
+                            <div class="progress-step" data-step="3">3. Sospecha</div>
+                            <div class="progress-step" data-step="4">4. Medicamento</div>
+                        </div>
 
-                        <div class="form-row">
-                            <div class="form-group col-sm-6 mb-3">
-                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="farmaco_nombre_contacto" placeholder="Nombre de la persona a contactar" required>
-                            </div>
-                            <div class="form-group col-sm-6 mb-3">
-                                <input type="email" class="form-control text-white rounded-0 bg-transparent" id="farmaco_correo" placeholder="Correo electrónico" required>
-                            </div>
-                            <div class="form-group col-sm-6 mb-3">
-                                <input type="tel" class="form-control text-white rounded-0 bg-transparent" id="farmaco_telefono" placeholder="Teléfono" required>
-                            </div>
-                            <div class="form-group col-sm-6 mb-3">
-                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="farmaco_direccion" placeholder="Dirección" required>
-                            </div>
-                            <div class="form-group col-sm-4 mb-3">
-                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="farmaco_nombre_producto" placeholder="Nombre del producto" required>
-                            </div>
-                            <div class="form-group col-sm-4 mb-3">
-                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="farmaco_lote" placeholder="Lote">
-                            </div>
-                            <div class="form-group col-sm-4 mb-3">
-                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="farmaco_fecha_caducidad" placeholder="Fecha de caducidad (MM/AAAA)">
-                            </div>
-                            <div class="form-group col-12 mb-3">
-                                <textarea id="farmaco_descripcion_queja" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Descripción de la queja" required></textarea>
-                            </div>
-
-                            <!-- CAPTCHA Mejorado -->
-                            <div class="form-group col-md-6 mb-4">
-                                <div class="captcha-container">
-                                    <label class="form-label text-white">Verificación de seguridad:</label>
-                                    <div id="captchaImage" class="mb-2 captcha-image-container"></div>
-                                    <input type="text" class="form-control text-white rounded-0 bg-transparent" id="captchaAnswer" placeholder="Ingrese el texto de la imagen" required>
-                                    <button type="button" class="btn btn-link p-0 mt-2 text-white" onclick="generateNewCaptcha()">
-                                        <small>¿No ves bien el código? Generar nuevo</small>
-                                    </button>
+                        <div class="form-step active" data-step="1" id="step1">
+                            <h4 class="text-primary mb-4">1. Datos del Notificador</h4>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold text-dark">Nombre (o iniciales) *</label>
+                                    <input type="text" name="nombre_cliente" class="form-control border-secondary text-dark" placeholder="Nombre completo" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold text-dark">Correo Electrónico *</label>
+                                    <input type="email" name="email_cliente" class="form-control border-secondary text-dark" placeholder="correo@ejemplo.com" required>
                                 </div>
                             </div>
-
-                            <!-- Botón de enviar -->
-                            <div class="form-group col-12 mb-0 text-center">
-                                <button type="submit" class="btn btn-primary rounded w-md mt-3">Enviar Reporte</button>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold text-dark">Teléfono *</label>
+                                    <input type="tel" name="telefono_cliente" class="form-control border-secondary text-dark" placeholder="55 1234 5678" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold text-dark">Dirección *</label>
+                                    <input type="text" name="direccion" class="form-control border-secondary text-dark" placeholder="Calle, Número, Colonia" required>
+                                </div>
                             </div>
                         </div>
+
+                        <div class="form-step" data-step="2" id="step2">
+                            <h4 class="text-primary mb-4">2. Datos del Paciente</h4>
+                            <div class="form-row">
+                                <div class="form-group col-lg-4 col-md-6 col-12">
+                                    <label class="font-weight-bold text-dark">Nombre del Paciente</label>
+                                    <input type="text" name="paciente_nombre" class="form-control border-secondary text-dark" placeholder="Nombre completo" required>
+                                </div>
+                                <div class="form-group col-lg-2 col-md-2 col-6">
+                                    <label class="font-weight-bold text-dark">Edad</label>
+                                    <input type="number" name="paciente_edad" class="form-control border-secondary text-dark" placeholder="#" required min="0">
+                                </div>
+                                <div class="form-group col-lg-3 col-md-4 col-6">
+                                    <label class="font-weight-bold text-dark">F. Nacimiento</label>
+                                    <input type="date" name="paciente_fecha_nacimiento" class="form-control border-secondary text-dark" required>
+                                </div>
+                                <div class="form-group col-lg-3 col-md-12 col-12">
+                                    <label class="font-weight-bold d-block text-dark">Sexo</label>
+                                    <div class="d-flex align-items-center pt-2">
+                                        <div class="custom-control custom-radio mr-3">
+                                            <input type="radio" id="sex_f" name="paciente_sexo" value="Femenino" class="custom-control-input" required>
+                                            <label class="custom-control-label text-dark" for="sex_f">Fem</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="sex_m" name="paciente_sexo" value="Masculino" class="custom-control-input">
+                                            <label class="custom-control-label text-dark" for="sex_m">Masc</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-2">
+                                <label class="font-weight-bold text-dark">Causa del suministro</label>
+                                <textarea name="paciente_causa_suministro" rows="3" class="form-control border-secondary text-dark" placeholder="¿Por qué tomó el medicamento?" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="3" id="step3">
+                            <h4 class="text-primary mb-4">3. Reacción Adversa</h4>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold text-dark">Fecha Inicio Reacción</label>
+                                    <input type="date" name="reaccion_fecha_inicio" class="form-control border-secondary text-dark" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold text-dark">Fecha Término Reacción</label>
+                                    <input type="date" name="reaccion_fecha_termino" class="form-control border-secondary text-dark" required>
+                                </div>
+                            </div>
+                            <div class="form-group mt-2">
+                                <label class="font-weight-bold text-dark">Descripción del Caso *</label>
+                                <textarea name="consulta" rows="5" class="form-control border-secondary text-dark" placeholder="Detalle qué sucedió..." required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="4" id="step4">
+                            <h4 class="text-primary mb-4">4. Medicamento Sospechoso</h4>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold text-dark">Nombre Comercial</label>
+                                    <input type="text" name="medicamento" class="form-control border-secondary text-dark" placeholder="Ej: Aspirina" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold text-dark">Nombre Genérico</label>
+                                    <input type="text" name="medicamento_generico" class="form-control border-secondary text-dark" placeholder="Ej: Ácido acetilsalicílico" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold text-dark"># Lote</label>
+                                    <input type="text" name="lote" class="form-control border-secondary text-dark" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-bold text-dark">Fecha Caducidad</label>
+                                    <input type="date" name="fecha_caducidad" class="form-control border-secondary text-dark" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label class="font-weight-bold text-dark">Dosis</label>
+                                    <input type="text" name="medicamento_dosis" class="form-control border-secondary text-dark" placeholder="Ej: 500mg" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="font-weight-bold text-dark">Inicio Tratamiento</label>
+                                    <input type="date" name="tratamiento_inicio" class="form-control border-secondary text-dark" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="font-weight-bold text-dark">Fin Tratamiento</label>
+                                    <input type="date" name="tratamiento_fin" class="form-control border-secondary text-dark" required>
+                                </div>
+                            </div>
+                            <div class="form-group mt-2">
+                                <label class="font-weight-bold text-dark">Indicación de Uso</label>
+                                <textarea name="medicamento_indicacion_uso" rows="2" class="form-control border-secondary text-dark" placeholder="¿Para qué se usó?" required></textarea>
+                            </div>
+
+                            <div class="security-module mt-4 mb-4">
+                                <div class="text-center mb-3">
+                                    <h6 class="font-weight-bold text-muted">
+                                        🔒 Verificación de Seguridad
+                                    </h6>
+                                </div>
+
+                                <div class="row justify-content-center align-items-center">
+                                    <div class="col-md-6 d-flex align-items-center justify-content-center mb-3 mb-md-0">
+                                        <div id="captchaImage" class="captcha-box shadow-sm mr-3">
+                                            </div>
+                                        <button type="button" class="btn btn-light btn-sm border" onclick="generateNewCaptcha()" title="Generar nuevo código">
+                                            ↻ </button>
+                                    </div>
+
+                                    <div class="col-md-5">
+                                        <input type="text" id="captchaAnswer" name="captchaAnswer" 
+                                            class="form-control text-center captcha-input" 
+                                            placeholder="Ingresa los caracteres aquí" required autocomplete="off">
+                                        <small class="text-muted d-block text-center mt-1">Escribe las letras y números de la imagen</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-navigation text-center mt-4">
+                            <button type="button" id="prevBtn" class="btn btn-secondary" style="display:none;">Anterior</button>
+                            <button type="button" id="nextBtn" class="btn btn-primary">Siguiente</button>
+                            <button type="submit" id="submitBtn" class="btn btn-success" style="display:none;">Enviar Reporte</button>
+                        </div>
+
                     </form>
-                </div>
-            </div>
-            <!-- Page Footer -->
-            <footer class="mt-5 py-4 border-top border-secondary">
-                <p class="mb-0 small" style="color: #e7dcdc;">Created By <a href="#about" target="_blank">Selder.</a>
-                    &copy;
-                    <script>document.write(new Date().getFullYear())</script> All rights reserved
-                </p>
-            </footer>
-            <!-- End of Page Footer -->
+                </div> </div>
         </div>
+    </div>
     </section>
     
     <!-- Section -->

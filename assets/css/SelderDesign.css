@@ -11174,14 +11174,14 @@ nav.page-navbar.affix .navbar-brand .text-dark {
 }
 
 .header {
-  background: #efefef url(../imgs/imgFarmaco/tableta-mano.jpg);
+  background: #efefef url(../imgs/img/SelderRecep32.png);
   background-size: cover;
-  background-position: center center;
+  background-position: top;
   background-repeat: no-repeat;
   text-align: center;
   color: white;
   position: relative;
-  height: 643px;
+  height: 712px;
   position: relative;
 }
 
@@ -11294,7 +11294,7 @@ section {
 }
 
 section:nth-child(odd) {
-  background-color: #eaf0fc;
+  background-color: #f4f4f4;
 }
 
 section.p-sm {
@@ -11500,7 +11500,7 @@ section.height-auto {
 
 /* testmonial */
 .testmonial-wrapper {
-  background: #eaf0fc;
+  background: #fff;
   box-shadow: 0 2px 5px 0 rgba(173, 181, 189, 0.4) !important;
   border-radius: 0.2rem;
   padding: 0 20px 20px;
@@ -11934,6 +11934,176 @@ img.tower {
 .nav-item.dropdown:hover .dropdown-menu {
   display: block;
 }
+
+
+
+/*///////////////////////////*/
+
+/* Estilos básicos para ocultar los pasos y manejar la navegación */
+.form-step {
+    display: none !important; /* Inicialmente, todos los pasos están ocultos */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.form-step.active {
+    display: block !important; /* <--- ESTE ES EL TRUCO */
+    visibility: visible !important;
+    opacity: 1 !important;
+    animation: fadeIn 0.5s; /* Opcional: para que aparezca suave */
+}
+.form-group-flex {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Para manejo en móviles */
+}
+.form-group-flex > div {
+    flex: 1 1 45%; /* Permite dos columnas */
+}
+.form-group-flex label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.form-group-flex input[type="text"], 
+.form-group-flex input[type="email"], 
+.form-group-flex input[type="tel"], 
+.form-group-flex input[type="date"], 
+.form-group-flex textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilos de progreso (opcional) */
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.progress-step {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 3px solid #ccc;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.progress-step.active {
+    border-bottom: 3px solid #3085d6;
+    font-weight: bold;
+    color: #3085d6;
+}
+
+/* CORRECCIÓN DE CAPAS (Z-INDEX) */
+
+/* 1. Aseguramos que la sección sea la base */
+#contact-quejas {
+    position: relative !important;
+    z-index: 1;
+}
+
+/* 2. La capa oscura se va al fondo y PERMITE CLICS a través de ella */
+#contact-quejas .overlay {
+    z-index: 0 !important; 
+    pointer-events: none; /* <--- ESTO ES CLAVE: Permite que los clics pasen */
+}
+
+/* 3. El contenido (formulario y texto) se trae al frente */
+#contact-quejas .container {
+    position: relative !important;
+    z-index: 10 !important; /* Más alto que el overlay */
+}
+
+/* 4. Aseguramos que la tarjeta sea blanca y clickeable */
+.form-card {
+    background-color: #ffffff !important;
+    z-index: 20 !important;
+    position: relative;
+}
+
+/* 1. ARREGLAR EL MENÚ (NAVBAR) */
+/* Esto asegura que el menú siempre esté POR ENCIMA de todo, incluso del formulario */
+.navbar, nav {
+    z-index: 9999 !important;
+    position: relative;
+}
+
+/* 2. ARREGLAR LA SECCIÓN DEL FORMULARIO */
+section.has-img-bg {
+    /* Quitamos alturas fijas para que crezca si el formulario crece */
+    height: auto !important; 
+    min-height: 100vh; /* Ocupa al menos toda la pantalla */
+    
+    /* Centrado vertical y espaciado */
+    display: flex;
+    align-items: center;
+    padding-top: 120px !important; /* Espacio arriba para no chocar con el menú */
+    padding-bottom: 100px !important; /* Espacio abajo para no chocar con el footer */
+}
+
+/* 3. AJUSTAR LA COLUMNA DE TEXTO (Izquierda) */
+.col-md-5 {
+    /* Quitamos el margen negativo exagerado que causaba problemas en móviles */
+    margin-top: 0 !important; 
+    align-self: center; /* Centrar verticalmente con respecto al formulario */
+}
+
+/* ESTILOS DEL MÓDULO DE SEGURIDAD */
+.security-module {
+    background-color: #f8f9fa; /* Fondo gris muy suave */
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.captcha-box {
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+    display: inline-block;
+    min-width: 150px; /* Asegura un tamaño mínimo */
+}
+
+/* Hacemos el input más grande y amigable */
+.captcha-input {
+    font-size: 1.1rem;
+    letter-spacing: 2px; /* Separa las letras que escribe el usuario */
+    border: 2px solid #e9ecef;
+    height: 45px;
+    color: #495057 !important; /* Asegura color oscuro */
+}
+
+.captcha-input:focus {
+    border-color: #FAD02C; /* Tu amarillo de marca */
+    box-shadow: 0 0 0 0.2rem rgba(250, 208, 44, 0.15);
+}
+
+/* Ajuste para el botón de recarga */
+.btn-light.border {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Botón redondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #6c757d;
+    transition: all 0.2s;
+}
+
+.btn-light.border:hover {
+    background-color: #fff;
+    color: #FAD02C;
+    border-color: #FAD02C !important;
+    transform: rotate(180deg); /* Pequeña animación al pasar el mouse */
+}
+
+
 
 
 
