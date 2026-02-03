@@ -4,10 +4,10 @@
 * Selder Landing page
 =========================================================
 
-* Copyright: 2025 SELDER (https://selder.com)
+* Copyright: 2025 SELDER (https://selder.com.mx)
 * Coded by: ABAUTISTA.
 =========================================================
-*/ 
+*/
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap");
 :root {
   --selder: #FAD02C;
@@ -271,6 +271,7 @@ button,
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
+  appearance: button;
 }
 
 button:not(:disabled),
@@ -299,6 +300,7 @@ input[type="time"],
 input[type="datetime-local"],
 input[type="month"] {
   -webkit-appearance: listbox;
+  appearance: listbox;
 }
 
 textarea {
@@ -337,6 +339,7 @@ progress {
 [type="search"] {
   outline-offset: -2px;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 [type="search"]::-webkit-search-decoration {
@@ -579,7 +582,7 @@ pre code {
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px;
+    max-width: 1350px;
   }
 }
 
@@ -10977,7 +10980,7 @@ body {
 
 /* typography */
 p {
-  font-size: calc(13px + (14 - 13) * ((100vw - 300px) / (1300 - 300)));
+  font-size: large;
   opacity: .8;
   color: #444;
 }
@@ -11198,7 +11201,7 @@ nav.page-navbar.affix .navbar-brand .text-dark {
 }
 
 .header2 {
-  background: #efefef url(../imgs/imgFarmaco/farmacov.jpg);
+  background: #efefef url(../imgs/imgFarmaco/labora.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -11227,7 +11230,7 @@ nav.page-navbar.affix .navbar-brand .text-dark {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgb(28 88 125 / 40%);
 }
 
 .header .header-content {
@@ -11499,35 +11502,94 @@ section.height-auto {
 }
 
 /* testmonial */
+/* --- ESTILO DEL CONTENEDOR (Tarjeta) --- */
 .testmonial-wrapper {
-  background: #fff;
-  box-shadow: 0 2px 5px 0 rgba(173, 181, 189, 0.4) !important;
-  border-radius: 0.2rem;
-  padding: 0 20px 20px;
-  margin-bottom: 60px;
+    background: #fff;
+    box-shadow: 0 2px 5px 0 rgba(173, 181, 189, 0.4) !important;
+    border-radius: 0.2rem;
+    padding: 0 20px 30px 20px; /* Un poco más de espacio abajo */
+    
+    /* Dimensiones y Posición */
+    width: 100%;
+    margin-top: 50px;      /* Espacio para el icono flotante */
+    margin-bottom: 30px;
+    flex: 1;               /* OBLIGATORIO: Hace que todas las tarjetas tengan la misma altura */
+    
+    /* Alineación Interna */
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* Centra horizontalmente */
+    justify-content: flex-start; /* IMPORTANTE: Evita que el contenido se estire a lo alto */
+    position: relative;
 }
 
+/* --- ESTILO DEL ICONO (Circular) --- */
 .testmonial-wrapper img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: 15px;
-  -webkit-transform: translateY(-45px);
-      -ms-transform: translateY(-45px);
-          transform: translateY(-45px);
-  background: white;
-  padding: 5px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+    padding: 5px;
+    box-shadow: 0 -5px 10px rgba(0,0,0,0.05);
+    z-index: 2;
+    
+    /* Posicionamiento Flotante */
+    margin-top: -40px;     /* Sube el icono la mitad de su tamaño */
+    margin-bottom: 20px;   /* Separación con el título */
+    transform: none;       /* Aseguramos que no haya transformaciones extrañas */
 }
 
+/* --- ESTILO DEL TÍTULO --- */
 .testmonial-wrapper .title {
-  margin-top: -40px;
+    margin-top: 0;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
-/*////////////*/
 
+/* --- ESTILO DEL PÁRRAFO (Misión y Visión) --- */
+.testmonial-wrapper p {
+    font-size: 0.95rem;
+   /*-- margin-bottom: 0;*/
+    color: #495057;
+}
+
+/* --- ESTILO DE LA LISTA (Valores) --- */
+/* Aquí estaba el problema: unificamos y compactamos la lista */
 .testmonial-wrapper ul {
-  padding-left: 10px;
-  text-align: start;
-  list-style-position: inside;
+    list-style: none;      /* Sin puntos default */
+    padding: 0;
+    margin: 0 auto;        /* Centrado automático */
+    text-align: left;      /* Texto alineado a la izquierda */
+    display: block;
+    width: 100%;
+    max-width: 240px;      /* LIMITA EL ANCHO: Hace que se vea igual que los párrafos */
+}
+
+/* --- ESTILO DE LOS ITEMS (Cada Valor) --- */
+.testmonial-wrapper ul li {
+    position: relative;
+    padding-left: 30px;    /* Espacio para la palomita */
+    margin-bottom: 6px;    /* MENOS MARGEN: Compacta la altura de la lista */
+    font-size: 0.95rem;    /* Mismo tamaño que el párrafo */
+    color: #495057;
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Línea muy sutil */
+    padding-bottom: 4px;
+}
+
+.testmonial-wrapper ul li:last-child {
+    border-bottom: none;   /* Quita la línea del último elemento */
+    margin-bottom: 0;
+}
+
+/* --- ESTILO DE LA PALOMITA (Check) --- */
+.testmonial-wrapper ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    top: 1px;              /* Pequeño ajuste vertical */
+    color: #FAD02C;        /* Color Selder */
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 .section.has-img-bg {
@@ -11967,10 +12029,10 @@ img.tower {
     font-weight: bold;
     margin-bottom: 5px;
 }
-.form-group-flex input[type="text"], 
-.form-group-flex input[type="email"], 
-.form-group-flex input[type="tel"], 
-.form-group-flex input[type="date"], 
+.form-group-flex input[type="text"],
+.form-group-flex input[type="email"],
+.form-group-flex input[type="tel"],
+.form-group-flex input[type="date"],
 .form-group-flex textarea {
     width: 100%;
     padding: 10px;
@@ -12008,7 +12070,7 @@ img.tower {
 
 /* 2. La capa oscura se va al fondo y PERMITE CLICS a través de ella */
 #contact-quejas .overlay {
-    z-index: 0 !important; 
+    z-index: 0 !important;
     pointer-events: none; /* <--- ESTO ES CLAVE: Permite que los clics pasen */
 }
 
@@ -12035,9 +12097,8 @@ img.tower {
 /* 2. ARREGLAR LA SECCIÓN DEL FORMULARIO */
 section.has-img-bg {
     /* Quitamos alturas fijas para que crezca si el formulario crece */
-    height: auto !important; 
+    height: auto !important;
     min-height: 100vh; /* Ocupa al menos toda la pantalla */
-    
     /* Centrado vertical y espaciado */
     display: flex;
     align-items: center;
@@ -12048,7 +12109,7 @@ section.has-img-bg {
 /* 3. AJUSTAR LA COLUMNA DE TEXTO (Izquierda) */
 .col-md-5 {
     /* Quitamos el margen negativo exagerado que causaba problemas en móviles */
-    margin-top: 0 !important; 
+    margin-top: 0 !important;
     align-self: center; /* Centrar verticalmente con respecto al formulario */
 }
 
