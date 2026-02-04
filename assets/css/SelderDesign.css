@@ -12108,10 +12108,9 @@ section.has-img-bg {
     height: auto !important;
     min-height: 100vh; /* Ocupa al menos toda la pantalla */
     /* Centrado vertical y espaciado */
-    display: flex;
     align-items: center;
     padding-top: 120px !important; /* Espacio arriba para no chocar con el menú */
-    padding-bottom: 100px !important; /* Espacio abajo para no chocar con el footer */
+    
 }
 
 /* 3. AJUSTAR LA COLUMNA DE TEXTO (Izquierda) */
