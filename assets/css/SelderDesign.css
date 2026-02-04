@@ -84,6 +84,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
 }
 
+
+
 p {
   margin-top: 0;
   margin-bottom: 1rem;
@@ -10180,18 +10182,12 @@ button.bg-dark:focus {
   .py-lg-5 {
     padding-top: 3rem !important;
   }
-  .pr-lg-5,
-  .px-lg-5 {
-    padding-right: 3rem !important;
-  }
+
   .pb-lg-5,
   .py-lg-5 {
     padding-bottom: 3rem !important;
   }
-  .pl-lg-5,
-  .px-lg-5 {
-    padding-left: 3rem !important;
-  }
+ 
   .m-lg-n1 {
     margin: -0.25rem !important;
   }
@@ -11184,7 +11180,7 @@ nav.page-navbar.affix .navbar-brand .text-dark {
   text-align: center;
   color: white;
   position: relative;
-  height: 712px;
+  height: 695px;
   position: relative;
 }
 
@@ -11718,27 +11714,39 @@ opacity: 1; /* Hace visible el activo */
 }
 
 .tabs-container .tab-nav .item .link {
-  display: flex; /* Cambia a flexbox para alinear el contenido */
-  flex-direction: column; /* Asegura que el texto se apile verticalmente */
-  justify-content: center; /* Centra el texto verticalmente */
-  align-items: center; /* Centra el texto horizontalmente */
-  width: auto;
-  height: auto;
-  margin: 5px auto;
-  border-radius: 0.17rem;
-  color: #343a40;
-  background-color: #dee2e6;
-  text-align: center;
-  padding: 10px 15px;
-  white-space: normal; /* Permite que el texto se divida en varias líneas */
-  word-wrap: break-word; /* Asegura que las palabras largas se dividan */
-  line-height: 1.2;
-  font-size: 14px;
-  min-height: auto; /* Asegura que todos los botones tengan la misma altura */
-  font-weight: 700;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-  box-shadow: 0 2px 5px 0 rgba(206, 212, 218, 0.6) !important;
+    display: flex;
+    align-items: center;    /* Centra el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    text-align: center;
+    
+    /* Dimensiones fijas para que todos sean iguales */
+    width: 120px;           /* Ancho fijo */
+    height: 80px;           /* Altura fija igual para todos */
+    margin: 10px auto;
+    padding: 10px;          /* Espaciado interno controlado */
+    
+    border-radius: 0.17rem;
+    color: #343a40;
+    background-color: #dee2e6;
+    
+    /* Manejo de texto */
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;       /* Evita que el texto de 2 líneas se separe demasiado */
+    white-space: normal;    /* Permite que el texto salte de línea */
+    word-wrap: break-word;
+    
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    box-shadow: 0 2px 5px 0 rgba(206, 212, 218, 0.6) !important;
+}
+
+/* Asegurar que en pantallas más grandes mantengan la proporción */
+@media (min-width: 768px) {
+    .tabs-container .tab-nav .item .link {
+        width: 140px !important;
+        height: 90px !important;
+    }
 }
 
 .tabs-container .tab-nav .item .link:hover {
@@ -12164,7 +12172,40 @@ section.has-img-bg {
     transform: rotate(180deg); /* Pequeña animación al pasar el mouse */
 }
 
+/* --- PARCHE DE ESTABILIZACIÓN --- */
+
+html, body {
+    overflow-x: hidden; /* Evita el scroll horizontal por seguridad */
+    width: 100%;
+}
+
+/* Ajuste de contenedores para que no sean más anchos que la pantalla */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px !important; 
+    }
+}
+
+/* Hacer los headers flexibles */
 
 
+/* Corregir el margen negativo que deforma la sección de contacto */
+.contact1 {
+    margin-top: -5rem !important; /* Reducido de 15rem a 5rem */
+}
+
+/* Asegurar que las imágenes no se salgan de sus columnas */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Corregir el ancho de las pestañas que también se veían fijas */
+@media (min-width: 992px) {
+    .tab-nav .link {
+        width: 100% !important; /* Deja que la columna maneje el ancho */
+        max-width: 150px;
+    }
+}
 
 
