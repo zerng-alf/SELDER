@@ -8,6 +8,9 @@
     <meta name="author" content="Selder S.A. DE C.V.">
     <title>Selder</title>
 
+    <!-- emailjs  -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
     <!-- sweetalert2  -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -166,11 +169,8 @@
                             <p class="text-muted">Despliegue cada sección para ingresar la información.</p>
                             <hr style="width: 50px; background-color: #FAD02C; height: 3px; margin: 10px auto;">
                         </div>
-
                         <form id="farmacoForm" novalidate>
-
                             <div class="accordion" id="accordionFarmaco">
-
                                 <div class="card border-0 mb-3 shadow-sm">
                                     <div class="card-header bg-white border-bottom-0" id="headingOne">
                                         <h2 class="mb-0">
@@ -295,7 +295,7 @@
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label class="font-weight-bold text-dark">Fecha Caducidad</label>
-                                                    <input type="date" name="fecha_caducidad"
+                                                    <input type="month" name="fecha_caducidad"
                                                         class="form-control border-secondary text-dark">
                                                 </div>
                                             </div>
@@ -460,6 +460,16 @@
         </div><!--End of Container -->
     </section>
     <!-- End of Section -->
+
+    <!-- Sction script  -->
+
+     <!--script emailjs -->
+    <script type="text/javascript">
+        (function() {
+            // Reemplaza esto con tu Public Key real de EmailJS
+            emailjs.init("sZ24Yvr5TMEwkmBGk");
+        })();
+    </script>
 
     <!-- core  -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>

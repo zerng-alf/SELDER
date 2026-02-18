@@ -2,7 +2,7 @@
 =========================================================
 * Selder Landing page
 =========================================================
-* Copyright: 2025 SELDER (https://selder.com)
+* Copyright: 2025 SELDER (https://selder.com.mx)
 * Coded by: ABAUTISTA.
 =========================================================
 */
@@ -10,9 +10,12 @@
 // ===========================================
 // 1. CONFIGURACIÓN Y VARIABLES GLOBALES
 // ===========================================
-const WEBHOOK_URL_N8N = "http://localhost:5678/webhook-test/farmacovigilancia"; // Tu URL de n8n
+//const WEBHOOK_URL_N8N = "http://localhost:5678/webhook-test/farmacovigilancia"; // Tu URL de n8n
 let currentCaptcha = ''; // Variable para guardar el texto del captcha actual
+// Caracteres para generar el captcha
 const characters = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjiklmnopqrstuvwxyz123456789!?¡¿';
+// Public Key de EmailJS
+emailjs.init("sZ24Yvr5TMEwkmBGk"); 
 
 // ===========================================
 // 2. LÓGICA DE NAVEGACIÓN Y CARRUSEL
@@ -216,14 +219,13 @@ window.addEventListener('resize', generateNewCaptcha);
 
 
 // ===========================================
-// 4. FUNCIÓN HELPER PARA ENVIAR A N8N
+// 4. FUNCIÓN HELPER PARA ENVIAR A EMAILJS (Reemplaza a n8n)
 // ===========================================
+/* // Función original de n8n comentada para referencia
 function sendDataToN8N(formElement, formType) {
     const formData = new FormData(formElement);
-    formData.append('tipo_flujo', formType); // Identificador para n8n
-    // Agregar fecha automática
+    formData.append('tipo_flujo', formType);
     formData.append('fecha_envio', new Date().toLocaleString());
-
     const dataToSend = Object.fromEntries(formData.entries());
 
     return fetch(WEBHOOK_URL_N8N, {
@@ -231,6 +233,12 @@ function sendDataToN8N(formElement, formType) {
         body: JSON.stringify(dataToSend),
         headers: { 'Content-Type': 'application/json' }
     });
+}
+*/
+
+// Nueva función estable usando EmailJS
+function sendWithEmailJS(formElement, serviceID, templateID) {
+    return emailjs.sendForm(serviceID, templateID, formElement);
 }
 
 // ===========================================
@@ -244,20 +252,18 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
 
             // A. VALIDACIÓN DE CAMPOS REQUERIDOS
-            // Esto buscará cualquier input con 'required' que esté vacío
             const inputsRequeridos = formFarmaco.querySelectorAll('[required]');
             let faltanDatos = false;
 
             inputsRequeridos.forEach(input => {
                 if (!input.value.trim()) {
                     faltanDatos = true;
-                    input.style.border = '2px solid #F85C70'; // Resaltar error
+                    input.style.border = '2px solid #F85C70'; 
                 } else {
-                    input.style.border = '1px solid #ced4da'; // Resetear
+                    input.style.border = '1px solid #ced4da'; 
                 }
             });
 
-            // Validar radio de "¿Es médico?"
             const esMedico = formFarmaco.querySelector('input[name="es_medico"]:checked');
             if (!esMedico) faltanDatos = true;
 
@@ -273,7 +279,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // B. VALIDACIÓN DE AUTORIZACIÓN DE DATOS
             const authOption = document.querySelector('input[name="autorizacion_datos"]:checked');
-
             if (!authOption) {
                 Swal.fire({
                     icon: 'warning',
@@ -284,7 +289,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // *** Autorización para almacenar datos ***
             if (authOption.value === "No acepto") {
                 Swal.fire({
                     icon: 'error',
@@ -293,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     confirmButtonColor: '#d33',
                     confirmButtonText: 'Entendido'
                 });
-                return; // 🛑 Detiene el proceso
+                return; 
             }
 
             // C. VALIDACIÓN DE CAPTCHA
@@ -306,11 +310,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     confirmButtonColor: '#FAD02C'
                 });
                 captchaInput.value = '';
-                generateNewCaptcha(); // Recargar captcha
+                generateNewCaptcha(); 
                 return;
             }
 
-            // D. ENVÍO A N8N
+            // D. ENVÍO CON EMAILJS
             Swal.fire({
                 title: 'Enviando...',
                 text: 'Procesando su reporte',
@@ -318,31 +322,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 didOpen: () => Swal.showLoading()
             });
 
-            sendDataToN8N(formFarmaco, 'Farmacovigilancia')
+            // Cambiamos el fetch de n8n por EmailJS
+            sendWithEmailJS(formFarmaco, 'service_Farmaco', 'template_farmaco')
                 .then(response => {
-                    if (response.ok) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: '¡Reporte Enviado!',
-                            text: 'Gracias por su colaboración.',
-                            confirmButtonColor: '#A3C14A'
-                        }).then(() => {
-                            formFarmaco.reset();
-                            generateNewCaptcha();
-                            // Colapsar acordeones para que se vea limpio
-                            $('.collapse').collapse('hide');
-                            $('#collapseOne').collapse('show');
-                        });
-                    } else {
-                        throw new Error('Error en el servidor');
-                    }
+                    Swal.fire({
+                        icon: 'success',
+                        title: '¡Reporte Enviado!',
+                        text: 'Gracias por su colaboración.',
+                        confirmButtonColor: '#A3C14A'
+                    }).then(() => {
+                        formFarmaco.reset();
+                        if (typeof generateNewCaptcha === 'function') generateNewCaptcha();
+                        $('.collapse').collapse('hide');
+                        $('#collapseOne').collapse('show');
+                    });
                 })
                 .catch(error => {
-                    console.error(error);
+                    console.error('Error EmailJS:', error);
                     Swal.fire({
                         icon: 'error',
                         title: 'Error',
-                        text: 'Hubo un problema al enviar. Intente más tarde.',
+                        text: 'Hubo un problema al enviar mediante EmailJS. Intente más tarde.',
                         confirmButtonColor: '#F85C70'
                     });
                 });
@@ -352,42 +352,64 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // ===========================================
-// 6. VALIDACIÓN FORMULARIO CONTACTO
+// 6. VALIDACIÓN FORMULARIO CONTACTO (General)
 // ===========================================
 document.addEventListener('DOMContentLoaded', function () {
-    const formContacto = document.getElementById('contactForm1');
-    if (!formContacto) return;
+    const formContacto = document.getElementById('contactForm');
 
-    formContacto.addEventListener('submit', function (e) {
-        e.preventDefault();
+    if (formContacto) {
+        formContacto.addEventListener('submit', function (event) {
+            event.preventDefault();
 
-        // Validaciones básicas de contacto...
-        const nombre = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const captcha = document.getElementById('captchaAnswer').value.trim();
+            // 1. Validar CAPTCHA (Usando la variable correcta: currentCaptcha)
+            const userResponse = document.getElementById('captchaAnswer').value.trim();
+            if (userResponse.toLowerCase() !== currentCaptcha.toLowerCase()) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Código incorrecto',
+                    text: 'Por favor, verifica el código de seguridad.',
+                    confirmButtonColor: '#FAD02C'
+                });
+                generateNewCaptcha();
+                return;
+            }
 
-        if(!nombre || !email) {
-             Swal.fire({ icon: 'warning', title: 'Campos vacíos', text: 'Complete los datos de contacto.', confirmButtonColor: '#FAD02C' });
-             return;
-        }
+            // 2. Bloquear botón y mostrar carga
+            const btn = event.target.querySelector('button[type="submit"]');
+            if(btn) btn.disabled = true;
 
-        if (captcha.toLowerCase() !== currentCaptcha.toLowerCase()) {
-            Swal.fire({ icon: 'error', title: 'Captcha incorrecto', confirmButtonColor: '#FAD02C' });
-            return;
-        }
+            Swal.fire({
+                title: 'Enviando mensaje...',
+                text: 'Por favor espera un momento',
+                allowOutsideClick: false,
+                didOpen: () => Swal.showLoading()
+            });
 
-        sendDataToN8N(formContacto, 'CONTACTO_GENERAL')
-            .then(res => {
-                if(res.ok) {
-                    Swal.fire({ icon: 'success', title: 'Mensaje Enviado', confirmButtonColor: '#A3C14A' });
-                    this.reset();
+            // 3. Enviar a EmailJS
+            // IMPORTANTE: Revisa que 'service_Farmaco' sea el ID real en tu panel de EmailJS
+            emailjs.sendForm('service_Farmaco', 'template_contacto', this)
+                .then(function() {
+                    Swal.fire({
+                        icon: 'success',
+                        title: '¡Mensaje enviado!',
+                        text: 'Nos pondremos en contacto contigo pronto.',
+                        confirmButtonColor: '#008a76'
+                    });
+                    formContacto.reset();
                     generateNewCaptcha();
-                } else {
-                    throw new Error();
-                }
-            })
-            .catch(() => Swal.fire({ icon: 'error', title: 'Error', text: 'No se pudo enviar el mensaje.' }));
-    });
+                }, function(error) {
+                    console.error('Error detallado:', error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error al enviar (400)',
+                        text: 'Revisa que el Template ID "template_contacto" sea correcto en EmailJS.'
+                    });
+                })
+                .finally(() => {
+                    if(btn) btn.disabled = false;
+                });
+        });
+    }
 });
 
 // Dropdown Toggle (Para menús)
@@ -400,156 +422,6 @@ document.querySelectorAll('.dropdown-toggle').forEach(item => {
         }
     });
 });
-
-// =========================================================
-// LÓGICA DEL FORMULARIO DE FARMACOVIGILANCIA
-// =========================================================
-
-document.addEventListener('DOMContentLoaded', function () {
-    const formFarmaco = document.getElementById('farmacoForm');
-
-    // Solo ejecutar si el formulario existe en la página
-    if (formFarmaco) {
-
-        formFarmaco.addEventListener('submit', function (e) {
-            // 1. Detener el envío automático inmediatamente
-            e.preventDefault();
-
-            // ------------------------------------------------
-            // A. VALIDACIÓN DE CAMPOS VACÍOS
-            // ------------------------------------------------
-            // Busca todos los inputs que tengan el atributo 'required'
-            const inputsRequeridos = formFarmaco.querySelectorAll('[required]');
-            let hayErrores = false;
-            let primerCampoError = null;
-
-            // Limpiar estilos de error previos
-            inputsRequeridos.forEach(input => input.style.border = '1px solid #ced4da');
-
-            // Verificar uno por uno
-            for (let input of inputsRequeridos) {
-                if (!input.value.trim()) {
-                    hayErrores = true;
-                    input.style.border = '2px solid #F85C70'; // Resaltar en rojo
-                    if (!primerCampoError) primerCampoError = input; // Guardar el primero para el foco
-                }
-            }
-
-            // Validar radio buttons (como "¿Es médico?" o "Sexo")
-            // Buscamos los grupos de radio buttons requeridos
-            const radioGroups = ['es_medico', 'sexo', 'autorizacion_datos'];
-            for (let name of radioGroups) {
-                const radios = formFarmaco.querySelectorAll(`input[name="${name}"]`);
-                if (radios.length > 0) {
-                    const seleccionado = formFarmaco.querySelector(`input[name="${name}"]:checked`);
-                    if (!seleccionado) {
-                        hayErrores = true;
-
-                    }
-                }
-            }
-
-            // Si falta algún dato obligatorio, mostramos alerta y detenemos
-            if (hayErrores) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Faltan datos',
-                    text: 'Por favor complete todos los campos obligatorios marcados (*).',
-                    confirmButtonColor: '#FAD02C'
-                });
-                if (primerCampoError) primerCampoError.focus();
-                return; // 🛑 DETIENE EL PROCESO AQUÍ
-            }
-
-            // ------------------------------------------------
-            // B. VALIDACIÓN DE "NO ACEPTO AUTORIZACIÓN DE DATOS
-            // ------------------------------------------------
-            const authOption = document.querySelector('input[name="autorizacion_datos"]:checked');
-
-            // Esta validación doble asegura que no sea nulo (aunque ya validamos arriba)
-            if (authOption && authOption.value === "No acepto") {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'No se puede procesar 🛑',
-                    text: 'Su solicitud no podrá procesar la Sospecha de Reacción Adversa a Medicamentos (SRAM) sin su autorización para almacenar datos.',
-                    confirmButtonColor: '#d33',
-                    confirmButtonText: 'Entendido'
-                });
-                return; // 🛑 DETIENE EL PROCESO AQUÍ
-            }
-
-            // ------------------------------------------------
-            // C. VALIDACIÓN DE CAPTCHA
-            // ------------------------------------------------
-            const captchaInput = document.getElementById('captchaAnswer');
-            // Aseguramos que currentCaptcha exista y comparamos
-            if (typeof currentCaptcha !== 'undefined' && captchaInput.value.trim().toLowerCase() !== currentCaptcha.toLowerCase()) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error de Seguridad',
-                    text: 'El código del captcha es incorrecto.',
-                    confirmButtonColor: '#FAD02C'
-                });
-                captchaInput.value = '';
-                if (typeof generateNewCaptcha === 'function') {
-                    generateNewCaptcha(); // Recargar captcha si la función existe
-                }
-                return; // 🛑 DETIENE EL PROCESO AQUÍ
-            }
-
-            // ------------------------------------------------
-            // D. ENVÍO DE DATOS A N8N (Éxito)
-            // ------------------------------------------------
-            Swal.fire({
-                title: 'Enviando...',
-                text: 'Procesando su reporte',
-                allowOutsideClick: false,
-                didOpen: () => Swal.showLoading()
-            });
-
-            // Preparar datos
-            const formData = new FormData(formFarmaco);
-            const data = Object.fromEntries(formData.entries());
-            data.fecha_envio = new Date().toLocaleString();
-            data.tipo_flujo = 'Farmacovigilancia'; // Identificador
-
-            // Enviar
-            fetch(WEBHOOK_URL_N8N, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (response.ok) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: '¡Reporte Enviado!',
-                        text: 'Gracias por su colaboración.',
-                        confirmButtonColor: '#A3C14A'
-                    }).then(() => {
-                        formFarmaco.reset();
-                        if (typeof generateNewCaptcha === 'function') generateNewCaptcha();
-                        // Cerrar acordeones si usas Bootstrap
-                        $('.collapse').collapse('hide');
-                        $('#collapseOne').collapse('show');
-                    });
-                } else {
-                    throw new Error('Error en la respuesta del servidor');
-                }
-            })
-            .catch(error => {
-                console.error('Error al enviar:', error);
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'Hubo un problema al enviar el reporte. Intente más tarde.',
-                    confirmButtonColor: '#F85C70'
-                });
-            });
-        });
-    }
-});
-
 
 /*----scroll */
 
@@ -565,13 +437,21 @@ function scrollToSection(sectionId) {
 }
 
 $(document).ready(function() {
-    $('a[href^="#"]').on('click', function(event) {
+    // Seleccionamos enlaces que empiezan con #
+    // PERO ignoramos los que tienen data-toggle (pestañas/tabs)
+    $('a[href^="#"]').not('[data-toggle="pill"], [data-toggle="tab"]').on('click', function(event) {
         if (this.hash !== "") {
             event.preventDefault();
             var hash = this.hash;
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top - 1
-            }, 800);
+            const target = $(hash);
+
+            if (target.length) {
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top - 1
+                }, 800);
+            }
         }
     });
 });
+
+

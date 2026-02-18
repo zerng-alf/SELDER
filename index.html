@@ -12,6 +12,9 @@
     <!-- sweetalert2  -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <!-- emailjs  -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
 
@@ -64,8 +67,8 @@
     <!-- Page Header -->
     <header id="home" class="header">
         <div class="overlay"></div>
-        <div class="header-content">
-            <p>Lorem ipsum dolor sit amet.</p>
+        <div class="header-content" style="margin-top: 137px;">
+            <!-- <p>Lorem ipsum dolor sit amet.</p> -->
             <h2>Soluciones farmacéuticas para un futuro más saludable.</h2>
             <a class="btn btn-outline-light" href="#Productos">Nuestros productos</a>
         </div>
@@ -81,30 +84,28 @@
                     <h1>Nosotros</h1>
                 </div>
                 <div class="content">
-                    <h5 class="title mb-3">Lorem ipsum dolor sit.</h5>
                     <!-- row -->
                     <div class="row">
                         <div class="col">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda soluta nisi cumque
-                                nostrum porro repellat iusto neque quos asperiores, aliquam.</p>
-                            <p><b>Adipisicing elit. Modi similique iusto voluptatibus sint.</b></p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dignissimos modi
-                                molestias voluptas possimus perferendis saepe soluta accusantium, obcaecati neque quas
-                                ducimus, alias labore nesciunt atque ab voluptatibus quis! Molestiae dicta
-                                reprehenderit, quod laborum voluptatem laboriosam! Sapiente vel, fugiat voluptates.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, quis!</p>
+                    <h5 class="title mb-3">Introducción Corporativa</h5>
+                            <p>
+Compromiso con la Salud y la Innovación.
+En Selder, entendemos que la salud es el activo más valioso del ser humano. Por ello, nos hemos consolidado como una organización dedicada a transformar la ciencia en bienestar. Nuestra trayectoria se define por la búsqueda incesante de la excelencia en la manufactura de soluciones farmacéuticas de libre acceso.</p>
                         </div>
                         <div class="col">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda soluta nisi cumque
-                                nostrum porro repellat iusto neque quos asperiores, aliquam.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, quis!</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dignissimos modi
-                                molestias voluptas possimus perferendis saepe soluta accusantium, obcaecati neque quas
-                                ducimus, alias labore nesciunt atque ab voluptatibus quis! Molestiae dicta
-                                reprehenderit, quod laborum voluptatem laboriosam! Sapiente vel, fugiat voluptates.</p>
+                    <h5 class="title mb-3">Nuestra Trayectoria</h5>
+                            <p>
+Calidad que trasciende fronteras
+No solo fabricamos medicamentos; diseñamos confianza. Cada uno de nuestros procesos está respaldado por tecnología de última generación y un equipo de expertos comprometidos con la seguridad del paciente. Esto nos permite ofrecer productos que no solo cumplen, sino que desafían los estándares internacionales más exigentes.</p>
+                        </div>
+                        <div class="col">
+                    <h5 class="title mb-3">Por qué elegirnos</h5>
+                            <p>
+Diferenciación en el Mercado
+Nuestra ventaja competitiva reside en el equilibrio perfecto entre accesibilidad y rigor científico. Creemos firmemente que el acceso a la salud de calidad debe ser universal, lo que nos motiva a optimizar continuamente nuestra cadena de valor para llegar a más hogares con soluciones tangibles y seguras.</p>
                         </div>
                     </div><!-- End of Row -->
-                    <a href="javascript:void(0)">Read More...</a>
+                    <!-- <a href="javascript:void(0)">Read More...</a> -->
                 </div>
             </div><!-- End of About Wrapper -->
         </div> <!-- End of Container-->
@@ -232,8 +233,9 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 d-none d-lg-block align-self-center">
-                    <img src="assets/imgs/imgFarmaco/frascoCondil.png" alt="" class="w-100 tower">
+                    <img src="assets/imgs/imgFarmaco/frascoCondil.png" alt="Condil Selder" class="img-producto-sombra w-100 tower">
                 </div>
             </div>
         </div>
@@ -545,22 +547,22 @@
                         <div class="form-row">
                             <!-- Campos del formulario -->
                             <div class="form-group col-sm-4 mb-3">
-                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="name"
+                                <input type="text" name="nombre_cliente" class="form-control text-white rounded-0 bg-transparent" id="name"
                                     placeholder="Nombre" required>
                             </div>
 
                             <div class="form-group col-sm-4 mb-3">
-                                <input type="email" class="form-control text-white rounded-0 bg-transparent" id="email"
+                                <input type="email" name="email_cliente" class="form-control text-white rounded-0 bg-transparent" id="email"
                                     placeholder="Correo electrónico" required>
                             </div>
 
                             <div class="form-group col-sm-4 mb-3">
-                                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="subject"
+                                <input type="text" name="asunto" class="form-control text-white rounded-0 bg-transparent" id="subject"
                                     placeholder="Asunto" required>
                             </div>
 
                             <div class="form-group col-12 mb-3">
-                                <textarea id="message" cols="30" rows="4"
+                                <textarea id="message" name="consulta" cols="30" rows="4"
                                     class="form-control text-white rounded-0 bg-transparent" placeholder="Mensaje"
                                     required></textarea>
                             </div>
@@ -676,22 +678,26 @@
     <!-- bootstrap affix -->
     <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
 
-    <!-- <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
- <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cmay2dgq3007cu80chvutsjbj'></zapier-interfaces-chatbot-embed> -->
-
     <!-- Creative Design js -->
     <script src="assets/js/SelderScript.js"></script>
-    <script type="module">
-        import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js'
+   <!-- <script type="module">
+    import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js'
 
-        Typebot.initBubble({
-            typebot: "eq-al-zate-assistant-cvfsx9j",
-            theme: {
-                button: { backgroundColor: "#1D1D1D" },
-                chatWindow: { backgroundColor: "#fff" },
+    Typebot.initBubble({
+        typebot: "eq-al-zate-assistant-cvfsx9j",
+        theme: {
+            button: { 
+                backgroundColor: "#00897b", // Verde médico más profesional
+                customIconSrc: "💬", // Puedes poner un emoji o URL de imagen
+                size: "medium"
             },
-        });
-    </script>
+            chatWindow: { 
+                backgroundColor: "#ffffff",
+                borderRadius: "15px" 
+            },
+        },
+    });
+</script> -->
 </body>
 
 </html>
