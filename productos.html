@@ -36,7 +36,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Nosotros</a>
+                        <a class="nav-link" href="index.html" style="color: rgba(0, 0, 0, 0.7)">Nosotros</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle">Productos</a>
@@ -46,11 +46,17 @@
                                     target="_blank">EUA</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="maquila.html">Servicios</a>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Servicios</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="maquila.html" class="dropdown-item ">Maquila</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="farmaco.html">Farmaco Vigilancia</a>
+                        <a class="nav-link" href="farmaco.html" style="color: rgba(0, 0, 0, 0.7)">Farmaco Vigilancia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sugerencias.html" style="color: rgba(0, 0, 0, 0.7)">Sugerencias</a>
                     </li>
                     <li class="nav-item ml-md-4">
                         <a class="nav-link btn btn-primary" href="contacto.html">Contacto</a>
@@ -58,26 +64,28 @@
                 </ul>
             </div>
         </div>
-    </nav><!-- End of Page Navbar -->
+    </nav>
+    <!-- End of Page Navbar -->
 
     <!-- Page Header -->
     <header id="home" class="header1 header">
         <div class="overlay"></div>
         <div class="header-content">
-            <p>SELDER</p>
+            <!-- <p>SELDER</p> -->
             <h2>¿Que fabricamos?.</h2>
-            <a class="btn btn-outline-light" href="#condil">Nuestros productos</a>
+            <!-- <a class="btn btn-outline-light" href="#condil">Nuestros productos</a> -->
         </div>
     </header><!-- End of Page Header -->
 
-    <section class="section" id="condil">
+    <!-- End of Section PRODUCTOS -->
+    <section class="section" id="Productos">
         <div class="container">
             <div class="row justify-content-around">
                 <div class="col-lg-8">
                     <div class="tabs-container">
                         <ul class="nav tab-nav" id="pills-tab">
                             <li class="item">
-                                <a class="link" data-toggle="pill" data-target="#pills-profile" href="javascript:void(0)"
+                                <a class="link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
                                     aria-selected="true">Dosis</a>
                             </li>
                             <li class="item">
@@ -86,57 +94,43 @@
                             </li>
                             <li class="item">
                                 <a class="link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact"
-                                    aria-selected="false" style="line-height: 20px !important;">Reacciones secundarias</a>
+                                    aria-selected="false" style="line-height: 20px !important;">Reacciones
+                                    secundarias</a>
                             </li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="pills-home">
-                                <h4 class="title">Some Title</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam repellendus esse
-                                    consectetur possimus voluptatem veniam quas ducimus ullam deleniti? Possimus, unde
-                                    eveniet suscipit perspiciatis dicta numquam voluptate fuga id, optio.</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit tempore molestiae
-                                    excepturi commodi ullam provident, optio dicta, nulla officiis consectetur soluta et
-                                    officia neque odio blanditiis aspernatur cum cumque error?</p>
+                                <h4 class="title">Dosis</h4>
+                                <p>Aplicar diariamente o cada tercer día, según la sensibilidad a este producto.</p>
+                                <h4 class="title">Indicación terapéutica</h4>
+                                <p>Verrugas, Mezquinos, Callos, Papilomas, Condilomas acuminados.Cada ml contiene: Podofilino 250 mg, Vehículo c.b.p. 1 ml</p>
+                                <h4 class="title">Fórmula</h4>
+                                <p>Cada ml contiene: Podofilino 250 mg, Vehículo c.b.p. 1 ml</p>
 
                                 <!--<button class="btn btn-primary mt-3">Download</button>-->
                             </div>
                             <div class="tab-pane fade" id="pills-profile">
-                                <h4 class="title">Another Title</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit unde totam nostrum,
-                                    sunt accusamus in delectus aspernatur, nisi eligendi ipsum eum! Aspernatur
-                                    recusandae nihil rem qui quam vero, saepe inventore tempora? Necessitatibus
-                                    corporis, nam minus reiciendis rerum? Eius voluptatem facilis, vitae minima modi
-                                    corrupti ullam, temporibus vel eum fugit inventore obcaecati provident ratione, ab
-                                    aliquid perspiciatis commodi, autem in nemo.</p>
-                                <p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing.</strong></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit tempore molestiae
-                                    excepturi commodi ullam provident, optio dicta, nulla officiis consectetur soluta et
-                                    officia neque odio blanditiis aspernatur cum cumque error?</p>
+                                <h4 class="title">Modo de empleo</h4>
+                                <p>Antes de aplicar se recomienda aseo de la parte afectada. Aplicar toques y dejar actuar durante un periodo de 1 a 5 horas. Una vez transcurrido el periodo de aplicación, es necesario lavar perfectamente con agua y jabón.</p>
+                                <!-- <p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing.</strong></p> -->
+                                <p>En condilomas acuminados se recomienda dar un toque en la parte afectada y dejar actuar durante 5 horas. De ser necesario, repetir cada 4 días hasta que desaparezcan eflorescencias condilomatosas.</p>
                             </div>
                             <div class="tab-pane fade" id="pills-contact">
-                                <h4 class="title">Some Other </h4>
-                                <p>Consectetur amet architecto, temporibus, debitis impedit dolore eius. Enim alias
-                                    beatae architecto iusto incidunt pariatur reprehenderit impedit ipsum ex at
-                                    deserunt, inventore corrupti rerum eius obcaecati. Itaque repellendus illum aut
-                                    beatae ex quasi doloremque voluptatem. Numquam at possimus, obcaecati, voluptas aut
-                                    vel nam recusandae pariatur error illum quaerat sunt! Ipsam rerum enim hic atque
-                                    nemo debitis, voluptate obcaecati inventore culpa. Odit adipisci eos natus fugiat.
-                                    Id, deserunt qui aliquam? Provident tempora repellat, repellendus consequatur quia
-                                    dolor at dolore temporibus esse in rem ea necessitatibus quo nesciunt eos a dolorum
-                                    voluptates, tenetur non eius quasi! Autem provident amet, maiores tenetur, eveniet
-                                    dicta, laborum odio velit sint consequatur beatae nemo at! Aperiam magnam eveniet
-                                    rerum, optio consequuntur quas maiores ullam necessitatibus nesciunt.</p>
+                                <h4 class="title">Reacciones secundarias</h4>
+                                <p>Puede producir irritación que desaparece al dejar de aplicar. No se aplique durante el embarazo, la lactancia, ni a niños menores de seis años. No se aplique en mucosas ni cerca de los ojos. Si persisten las molestias por más de cinco días consulte a su médico. No se deje al alcance de los niños. Consérvese a temperatura ambiente a no más de 30°C.</p>
+                                <p class="text-muted">Consulte a su médico o farmacéutico.</p>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 d-none d-lg-block align-self-center">
-                    <img src="assets/imgs/imgFarmaco/frascoCondil.png" alt="" class="w-100 tower">
+                    <img src="assets/imgs/imgFarmaco/frascoCondil.png" alt="Condil Selder" class="img-producto-sombra w-100 tower">
                 </div>
             </div>
         </div>
     </section>
+    <!-- End of Section PRODUCTOS -->
 
     <!-- section -->
     <section>
@@ -145,19 +139,17 @@
             <!-- Row -->
             <div class="row justify-content-between align-items-center">
                 <div class="col-md-5">
-                    <h6 class="title mb-3">Lorem ipsum dolor sit amet, consectetur.</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae autem rem impedit molestiae hic
-                        ducimus, consequuntur ullam dolorem quaerat beatae labore explicabo, sint laboriosam aperiam
-                        nihil inventore facilis. Quasi, facilis.</p>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, amet!
-                    </p>
-                    <button class="btn btn-outline-primary btn-sm">Learn More</button>
+                    <h6 class="title mb-3">Manufactura bajo Normativa Internacional.</h6>
+                    <p>Nuestro proceso de fabricación se rige estrictamente por las Buenas Prácticas de Fabricación (GMP) y la NOM-059-SSA1, garantizando un entorno de producción controlado. Cada etapa de la síntesis y mezcla del principio activo se realiza en áreas clasificadas, asegurando la pureza, potencia e integridad fisicoquímica de cada lote de medicamento producido en nuestra planta.</p>
+                    <!-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, amet!
+                    </p> -->
+                    <!-- <button class="btn btn-outline-primary btn-sm">Learn More</button> -->
 
                 </div>
                 <div class="col-md-6">
                     <div class="img-wrapper">
                         <div class="after right"></div>
-                        <img src="assets/imgs/imgFarmaco/pildoras-yodo.jpg" class="w-100" alt="About Us">
+                        <img src="assets/imgs/imgFarmaco/calidad.jpg" class="w-100" alt="About Us">
                     </div>
                 </div>
             </div><!-- End of Row -->
@@ -173,18 +165,16 @@
                 <div class="col-md-6">
                     <div class="img-wrapper">
                         <div class="after"></div>
-                        <img src="assets/imgs/imgFarmaco/pildoras-yodo2.jpg" class="w-100" alt="About us">
+                        <img src="assets/imgs/imgFarmaco/sistemas.jpg" class="w-100" alt="About us">
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <h6 class="title mb-3">Lorem ipsum dolor sit amet, consectetur.</h6>
+                    <h6 class="title mb-3">Sistemas de Control y Aseguramiento de Calidad</h6>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae autem rem impedit molestiae hic
-                        ducimus, consequuntur ullam dolorem quaerat beatae labore explicabo, sint laboriosam aperiam
-                        nihil inventore facilis. Quasi, facilis.</p>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, amet!
+                    <p>Implementamos protocolos de Control en Proceso (IPC) que monitorean variables críticas como la homogeneidad de la mezcla, viscosidad y concentración exacta de activos. Gracias a un sistema de trazabilidad integral, cada unidad cuenta con un historial digital detallado que vincula las materias primas, los tiempos de procesamiento y el personal operativo, facilitando auditorías de calidad precisas y reportes de farmacovigilancia.</p>
+                    <!-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, amet!
                     </p>
-                    <button class="btn btn-outline-primary btn-sm">Learn More</button>
+                    <button class="btn btn-outline-primary btn-sm">Learn More</button> -->
                 </div>
             </div><!-- End of Row -->
         </div><!-- End of Container-->
