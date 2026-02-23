@@ -12207,4 +12207,36 @@ img {
     }
 }
 
+scroll-top corregido
+.scroll-top-btn {
+    display: none; /* Se activa por JS */
+    position: fixed !important;
+    bottom: 25px !important;
+    right: 25px !important;
+    z-index: 99999 !important; /* Prioridad máxima */
+    width: 50px !important;
+    height: 50px !important;
+    border: none;
+    outline: none;
+    background-color: #008a76 !important; /* Verde Selder */
+    color: white !important;
+    cursor: pointer;
+    border-radius: 50% !important; /* Circular para que se vea más moderno */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    opacity: 0; 
+    transition: opacity 0.4s ease, transform 0.3s ease !important;
+    
+    /* Centrado del icono */
+    align-items: center !important;
+    justify-content: center !important;
+}
 
+.scroll-top-btn:hover {
+    background-color: #1a1a1a !important;
+    transform: translateY(-5px);
+}
+
+.scroll-top-btn span {
+    font-size: 20px;
+    display: block;
+}

@@ -455,3 +455,36 @@ $(document).ready(function() {
 });
 
 
+// // Lógica para el botón "Volver arriba"
+// document.addEventListener('DOMContentLoaded', function() {
+//     const scrollBtn = document.getElementById("scrollToTopBtn");
+    
+//     if (!scrollBtn) return;
+
+//     window.addEventListener('scroll', function() {
+//         const distance = window.pageYOffset || document.documentElement.scrollTop;
+
+//         if (distance > 300) {
+//             if (scrollBtn.style.display !== "flex") {
+//                 scrollBtn.style.display = "flex"; // Usamos flex para centrar el icono
+//                 // Forzamos el renderizado antes de la opacidad
+//                 void scrollBtn.offsetWidth; 
+//                 scrollBtn.style.opacity = "1";
+//             }
+//         } else {
+//             scrollBtn.style.opacity = "0";
+//             setTimeout(() => {
+//                 if (window.pageYOffset <= 300) {
+//                     scrollBtn.style.display = "none";
+//                 }
+//             }, 400);
+//         }
+//     });
+
+//     scrollBtn.addEventListener("click", function() {
+//         window.scrollTo({
+//             top: 0,
+//             behavior: "smooth"
+//         });
+//     });
+// });
