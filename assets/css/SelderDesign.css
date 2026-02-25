@@ -12261,12 +12261,12 @@ scroll-top corregido
 /* Sombra de piso ovalada */
 .shadow-floor {
     position: absolute;
-    bottom: 20px; /* Ajusta según la base de tu frasco */
+    bottom: 58px; /* Ajusta según la base de tu frasco */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-60%);
     width: 60%; /* El ancho de la sombra en la base */
     height: 20px;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 70%);
     z-index: 1;
     border-radius: 50%;
     transition: all 0.4s ease;
