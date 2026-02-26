@@ -11184,8 +11184,9 @@ nav.page-navbar.affix .navbar-brand .text-dark {
   position: relative;
 }
 
+/*header productos*/
 .header1 {
-  background: #efefef url(../imgs/imgFarmaco/traba.jpg);
+  background: #efefef url(../imgs/imgFarmaco/linea-produccion.png);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -11504,13 +11505,13 @@ section.height-auto {
     box-shadow: 0 2px 5px 0 rgba(173, 181, 189, 0.4) !important;
     border-radius: 0.2rem;
     padding: 0 20px 30px 20px; /* Un poco más de espacio abajo */
-    
+
     /* Dimensiones y Posición */
     width: 100%;
     margin-top: 50px;      /* Espacio para el icono flotante */
     margin-bottom: 30px;
     flex: 1;               /* OBLIGATORIO: Hace que todas las tarjetas tengan la misma altura */
-    
+
     /* Alineación Interna */
     display: flex;
     flex-direction: column;
@@ -11528,7 +11529,7 @@ section.height-auto {
     padding: 5px;
     box-shadow: 0 -5px 10px rgba(0,0,0,0.05);
     z-index: 2;
-    
+
     /* Posicionamiento Flotante */
     margin-top: -40px;     /* Sube el icono la mitad de su tamaño */
     margin-bottom: 20px;   /* Separación con el título */
@@ -11718,24 +11719,24 @@ opacity: 1; /* Hace visible el activo */
     align-items: center;    /* Centra el texto verticalmente */
     justify-content: center; /* Centra el texto horizontalmente */
     text-align: center;
-    
+
     /* Dimensiones fijas para que todos sean iguales */
     width: 120px;           /* Ancho fijo */
     height: 80px;           /* Altura fija igual para todos */
     margin: 10px auto;
     padding: 10px;          /* Espaciado interno controlado */
-    
+
     border-radius: 0.17rem;
     color: #343a40;
     background-color: #dee2e6;
-    
+
     /* Manejo de texto */
     font-size: 14px;
     font-weight: 700;
     line-height: 1.2;       /* Evita que el texto de 2 líneas se separe demasiado */
     white-space: normal;    /* Permite que el texto salte de línea */
     word-wrap: break-word;
-    
+
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
     box-shadow: 0 2px 5px 0 rgba(206, 212, 218, 0.6) !important;
@@ -12181,7 +12182,7 @@ html, body {
 /* Ajuste de contenedores para que no sean más anchos que la pantalla */
 @media (min-width: 1200px) {
     .container {
-        max-width: 1140px !important; 
+        max-width: 1140px !important;
     }
 }
 
@@ -12207,7 +12208,7 @@ img {
     }
 }
 
-scroll-top corregido
+/*scroll-top corregido*/
 .scroll-top-btn {
     display: none; /* Se activa por JS */
     position: fixed !important;
@@ -12223,9 +12224,9 @@ scroll-top corregido
     cursor: pointer;
     border-radius: 50% !important; /* Circular para que se vea más moderno */
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    opacity: 0; 
+    opacity: 0;
     transition: opacity 0.4s ease, transform 0.3s ease !important;
-    
+
     /* Centrado del icono */
     align-items: center !important;
     justify-content: center !important;
@@ -12251,7 +12252,7 @@ scroll-top corregido
 
 /* Imagen con sombra suave en el contorno */
 .img-condil-shadow {
-    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.1)); /* Sombra de contorno muy ligera */
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2)); /* Sombra de contorno muy ligera */
     transition: transform 0.4s ease;
     position: relative;
     z-index: 2;
@@ -12261,7 +12262,7 @@ scroll-top corregido
 /* Sombra de piso ovalada */
 .shadow-floor {
     position: absolute;
-    bottom: 58px; /* Ajusta según la base de tu frasco */
+    bottom: 62px; /* Ajusta según la base de tu frasco */
     left: 50%;
     transform: translateX(-60%);
     width: 60%; /* El ancho de la sombra en la base */
