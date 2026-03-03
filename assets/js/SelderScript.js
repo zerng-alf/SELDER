@@ -15,7 +15,7 @@ let currentCaptcha = ''; // Variable para guardar el texto del captcha actual
 // Caracteres para generar el captcha
 const characters = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjiklmnopqrstuvwxyz123456789!?¡¿';
 // Public Key de EmailJS
-emailjs.init("sZ24Yvr5TMEwkmBGk"); 
+emailjs.init("sZ24Yvr5TMEwkmBGk");
 
 // ===========================================
 // 2. LÓGICA DE NAVEGACIÓN Y CARRUSEL
@@ -148,7 +148,6 @@ function drawDistortedText(ctx, text, canvas) {
         ctx.shadowBlur = 10;
         ctx.shadowOffsetX = Math.random() * 5 - 2.5;
         ctx.shadowOffsetY = Math.random() * 5 - 2.5;
-
         ctx.fillText(char, 0, 0);
         ctx.restore();
     });
@@ -258,9 +257,9 @@ document.addEventListener('DOMContentLoaded', function () {
             inputsRequeridos.forEach(input => {
                 if (!input.value.trim()) {
                     faltanDatos = true;
-                    input.style.border = '2px solid #F85C70'; 
+                    input.style.border = '2px solid #F85C70';
                 } else {
-                    input.style.border = '1px solid #ced4da'; 
+                    input.style.border = '1px solid #ced4da';
                 }
             });
 
@@ -297,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     confirmButtonColor: '#d33',
                     confirmButtonText: 'Entendido'
                 });
-                return; 
+                return;
             }
 
             // C. VALIDACIÓN DE CAPTCHA
@@ -310,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     confirmButtonColor: '#FAD02C'
                 });
                 captchaInput.value = '';
-                generateNewCaptcha(); 
+                generateNewCaptcha();
                 return;
             }
 
@@ -458,7 +457,7 @@ $(document).ready(function() {
 // // Lógica para el botón "Volver arriba"
 // document.addEventListener('DOMContentLoaded', function() {
 //     const scrollBtn = document.getElementById("scrollToTopBtn");
-    
+
 //     if (!scrollBtn) return;
 
 //     window.addEventListener('scroll', function() {
@@ -468,7 +467,7 @@ $(document).ready(function() {
 //             if (scrollBtn.style.display !== "flex") {
 //                 scrollBtn.style.display = "flex"; // Usamos flex para centrar el icono
 //                 // Forzamos el renderizado antes de la opacidad
-//                 void scrollBtn.offsetWidth; 
+//                 void scrollBtn.offsetWidth;
 //                 scrollBtn.style.opacity = "1";
 //             }
 //         } else {
