@@ -84,45 +84,39 @@
     <!-- End of Page Header -->
 
     <!-- About Section -->
-    <section id="about">
-        <!-- Container -->
-        <div class="container">
-            <!-- About wrapper -->
-            <div class="about-wrapper">
-                <div class="after">
-                    <h1>Nosotros</h1>
-                </div>
-                <div class="content">
-                    <!-- row -->
-                    <div class="row">
-                        <div class="col">
-                    <h5 class="title mb-3">Introducción Corporativa</h5>
-                            <p>
-                                Compromiso con la Salud y la Innovación.
-                                En Selder, entendemos que la salud es el activo más valioso del ser humano. Por ello, nos hemos consolidado como una organización dedicada a transformar la ciencia en bienestar. Nuestra trayectoria se define por la búsqueda incesante de la excelencia en la manufactura de soluciones farmacéuticas de libre acceso.
-                            </p>
-                        </div>
-                        <div class="col">
-                    <h5 class="title mb-3">Nuestra Trayectoria</h5>
-                            <p>
-                                Calidad que trasciende fronteras
-                                No solo fabricamos medicamentos; diseñamos confianza. Cada uno de nuestros procesos está respaldado por tecnología de última generación y un equipo de expertos comprometidos con la seguridad del paciente. Esto nos permite ofrecer productos que no solo cumplen, sino que desafían los estándares internacionales más exigentes.
-                            </p>
-                        </div>
-                        <div class="col">
-                    <h5 class="title mb-3">Por qué elegirnos</h5>
-                            <p>
-                                Diferenciación en el Mercado
-                                Nuestra ventaja competitiva reside en el equilibrio perfecto entre accesibilidad y rigor científico. Creemos firmemente que el acceso a la salud de calidad debe ser universal, lo que nos motiva a optimizar continuamente nuestra cadena de valor para llegar a más hogares con soluciones tangibles y seguras.
-                            </p>
-                        </div>
+<section id="about">
+    <div class="container">
+        <div class="about-wrapper">
+            <div class="after">
+                <h1>Nosotros</h1>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <h5 class="title mb-3">Nuestra Historia</h5>
+                        <p>
+                            <strong>Casi 60 años de evolución.</strong> Fundada por Don Manuel Martínez del Castro, Selder inició su andar en la CDMX con la visión de transformar la ciencia en bienestar. Desde nuestra sede en Guadalupe Inn, hemos consolidado una infraestructura que hoy compite en estándares internacionales.
+                        </p>
                     </div>
-                    <!-- End of Row -->
-                    <!-- <a href="javascript:void(0)">Read More...</a> -->
+
+                    <div class="col-md-4 mb-4">
+                        <h5 class="title mb-3">Trayectoria de Calidad</h5>
+                        <p>
+                            Nos especializamos en medicamentos de libre acceso, destacando en <strong>antigripales y alivio del dolor</strong>. Nuestra fortaleza reside en la producción de tecnologías sofisticadas como la <strong>gelatina blanda</strong>, garantizando eficacia comprobada y seguridad para el paciente.
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <h5 class="title mb-3">¿Por qué elegirnos?</h5>
+                        <p>
+                            Somos una empresa 100% mexicana que se distingue por su <strong>agilidad y principios</strong>. Reaccionamos rápido a los cambios globales sin sacrificar la calidad, invirtiendo constantemente en tecnología para superar las normativas más estrictas como la <strong>FDA</strong>.
+                        </p>
+                    </div>
                 </div>
-            </div><!-- End of About Wrapper -->
-        </div> <!-- End of Container-->
-    </section>
+                </div>
+        </div>
+    </div> 
+</section>
     <!--End of Section -->
 
     <!-- Testmonial Section -->
@@ -578,56 +572,65 @@
                             privacidad</a>
                     </p>
                 </div>
-                <div class="col-md-7">
-                    <form id="contactForm">
-                        <h1>CONTACTANOS</h1>
-                        <p class="mb-3" style="color: #e7dcdc;">¡Si tienes alguna pregunta o necesitas ayuda,
-                            contáctanos!</p>
+                    <div class="col-md-7">
+                        <form id="contactForm">
+                            <h1 class="text-white">CONTACTANOS</h1>
+                            <p class="mb-3" style="color: #e7dcdc;">¡Si tienes alguna pregunta o necesitas ayuda, contáctanos!</p>
 
-                        <div class="form-row">
-                            <!-- Campos del formulario -->
-                            <div class="form-group col-sm-4 mb-3">
-                                <input type="text" name="nombre_cliente" class="form-control text-white rounded-0 bg-transparent" id="name"
-                                    placeholder="Nombre" required>
-                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-sm-4 mb-3">
+                                    <label class="text-white font-weight-bold mb-2">Nombre</label>
+                                    <input type="text" name="nombre_cliente" class="form-control text-white rounded-0 bg-transparent" id="name" placeholder="Nombre" required>
+                                </div>
 
-                            <div class="form-group col-sm-4 mb-3">
-                                <input type="email" name="email_cliente" class="form-control text-white rounded-0 bg-transparent" id="email"
-                                    placeholder="Correo electrónico" required>
-                            </div>
+                                <div class="form-group col-sm-4 mb-3">
+                                    <label class="text-white font-weight-bold mb-2">Email </label>
+                                    <input type="email" name="email_cliente" class="form-control text-white rounded-0 bg-transparent" id="email" placeholder="Email" required>
+                                </div>
 
-                            <div class="form-group col-sm-4 mb-3">
-                                <input type="text" name="asunto" class="form-control text-white rounded-0 bg-transparent" id="subject"
-                                    placeholder="Asunto" required>
-                            </div>
+                                <div class="form-group col-sm-4 mb-3">
+                                    <label class="text-white font-weight-bold mb-2">Asunto </label>
+                                    <input type="text" name="asunto" class="form-control text-white rounded-0 bg-transparent" id="subject" placeholder="Asunto" required>
+                                </div>
 
-                            <div class="form-group col-12 mb-3">
-                                <textarea id="message" name="consulta" cols="30" rows="4"
-                                    class="form-control text-white rounded-0 bg-transparent" placeholder="Mensaje"
-                                    required></textarea>
-                            </div>
+                                <div class="form-group col-12 mb-3">
+                                    <label class="text-white font-weight-bold mb-2">Mensaje </label>
+                                    <textarea id="message" name="consulta" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Escriba su mensaje aquí..." required></textarea>
+                                </div>
 
-                            <!-- CAPTCHA Mejorado -->
-                            <div class="form-group col-6 mb-4">
-                                <div class="captcha-container">
-                                    <label class="form-label text-white">Verificación de seguridad:</label>
-                                    <div id="captchaImage" class="mb-2 captcha-image-container"></div>
-                                    <input type="text" class="form-control text-white rounded-0 bg-transparent"
-                                        id="captchaAnswer" placeholder="Ingrese el texto de la imagen" required>
-                                    <button type="button" class="btn btn-link p-0 mt-2 text-white"
-                                        onclick="generateNewCaptcha()">
-                                        <small>¿No ves bien el código? Generar nuevo</small>
-                                    </button>
+                                <div class="form-group col-12 mb-4">
+                                    <label class="text-white font-weight-bold mb-2">Verificación de seguridad</label>
+                                    <div class="captcha-container">
+                                        <div class="row no-gutters align-items-center">
+                                            
+                                            <div class="col-auto">
+                                                <div id="captchaImage" class="captcha-image-container" style="width: 300px; height: 120px; display: flex; align-items: center; justify-content: center;">
+                                                    </div>
+                                            </div>
+
+                                            <div class="col pl-4">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <input type="text" class="form-control text-white rounded-0 bg-transparent" 
+                                                        id="captchaAnswer" placeholder="Código" style="max-width: 130px;" required>
+                                                    
+                                                    <button type="button" class="btn btn-link text-white ml-2 p-0" onclick="generateNewCaptcha()" style="white-space: nowrap;">
+                                                        <small><i class="ti-reload"></i> Generar nuevo</small>
+                                                    </button>
+                                                </div>
+                                                
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary rounded py-2 px-4" style="min-width: 220px;">
+                                                        Enviar Mensaje
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <!-- Botón de enviar -->
-                            <div class="form-group col-12 mb-0">
-                                <button type="submit" class="btn btn-primary rounded w-md mt-3">Enviar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                        </form>
+                    </div>
             </div>
             <!-- Page Footer -->
             <footer class="mt-5 py-4 border-top border-secondary">
@@ -688,18 +691,24 @@
                     </li>
                     <li class="list-body">
                         <p> Contáctanos y nos comunicaremos contigo dentro de 24 horas.</p>
-                        <p><i class="ti-location-pin text-primary"></i> Fernado Villalpando N° 48, Col Guadalupe Inn C.P
-                            01020, Alvaro
-                            Obregon CDMX.</p>
-                        <p><i class="ti-email text-primary"></i> contacto@selder.com.mx</p>
+                        
+                        <p>
+                            <i class="ti-location-pin text-primary"></i> 
+                            Fernado Villalpando N° 48, Col Guadalupe Inn C.P 01020, Alvaro Obregon CDMX.
+                        </p>
+
+                        <p>
+                            <i class="ti-mobile text-primary"></i> 
+                            +52 55 5662-5009
+                        </p>
+
+                        <p>
+                            <i class="ti-email text-primary"></i> 
+                            contacto@selder.com.mx
+                        </p>
+
                         <div class="social-links">
-                            <!--<a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>-->
-                        </div>
+                            </div>
                     </li>
                 </ul>
             </div><!-- End of Pre footer -->

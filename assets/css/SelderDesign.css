@@ -12366,3 +12366,57 @@ img {
 }
 
 
+#about .display-4 {
+    font-size: 3.2rem;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+#about .text-primary {
+    color: #FAD02C !important; /* Amarillo Selder */
+}
+
+#about .bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.z-index-10 {
+    z-index: 10;
+}
+
+/* Efecto de sutileza en los valores */
+.valores-selder .badge-primary {
+    background-color: #FAD02C;
+}
+
+@media (max-width: 991px) {
+    #about .display-4 {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* Detalle de borde lateral para Misión/Visión */
+/* Estilo para el mosaico de ADN */
+#commitment .row.no-gutters {
+    transition: transform 0.4s ease;
+}
+
+#commitment .row.no-gutters:hover {
+    transform: translateY(-5px); /* Pequeña elevación al pasar el mouse */
+}
+
+/* Tipografía y Colores */
+#commitment .text-primary {
+    color: #FAD02C !important;
+}
+
+#commitment h2.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222;
+}
+
+#commitment .text-white {
+    color: #ffffff !important;
+}

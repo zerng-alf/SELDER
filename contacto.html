@@ -100,45 +100,65 @@
                             privacidad</a>
                     </p>
                 </div>
-                <div class="col-md-7">
-                    <form id="contactForm">
-    <h1>CONTACTANOS</h1>
-    <p class="mb-3" style="color: #e7dcdc;">¡Si tienes alguna pregunta o necesitas ayuda, contáctanos!</p>
+                    <div class="col-md-7">
+                        <form id="contactForm">
+                            <h1 class="text-white">CONTACTANOS</h1>
+                            <p class="mb-3" style="color: #e7dcdc;">¡Si tienes alguna pregunta o necesitas ayuda, contáctanos!</p>
 
-    <div class="form-row">
-        <div class="form-group col-sm-4 mb-3">
-            <input type="text" name="nombre_cliente" class="form-control text-white rounded-0 bg-transparent" id="name" placeholder="Nombre" required>
-        </div>
+                            <div class="form-row">
+                                <div class="form-group col-sm-4 mb-3">
+                                    <label class="text-white font-weight-bold mb-2">Nombre</label>
+                                    <input type="text" name="nombre_cliente" class="form-control text-white rounded-0 bg-transparent" id="name" placeholder="Nombre" required>
+                                </div>
 
-        <div class="form-group col-sm-4 mb-3">
-            <input type="email" name="email_cliente" class="form-control text-white rounded-0 bg-transparent" id="email" placeholder="Correo electrónico" required>
-        </div>
+                                <div class="form-group col-sm-4 mb-3">
+                                    <label class="text-white font-weight-bold mb-2">Email </label>
+                                    <input type="email" name="email_cliente" class="form-control text-white rounded-0 bg-transparent" id="email" placeholder="Email" required>
+                                </div>
 
-        <div class="form-group col-sm-4 mb-3">
-            <input type="text" name="asunto" class="form-control text-white rounded-0 bg-transparent" id="subject" placeholder="Asunto" required>
-        </div>
+                                <div class="form-group col-sm-4 mb-3">
+                                    <label class="text-white font-weight-bold mb-2">Asunto </label>
+                                    <input type="text" name="asunto" class="form-control text-white rounded-0 bg-transparent" id="subject" placeholder="Asunto" required>
+                                </div>
 
-        <div class="form-group col-12 mb-3">
-            <textarea name="consulta" id="message" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Mensaje" required></textarea>
-        </div>
+                                <div class="form-group col-12 mb-3">
+                                    <label class="text-white font-weight-bold mb-2">Mensaje </label>
+                                    <textarea id="message" name="consulta" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Escriba su mensaje aquí..." required></textarea>
+                                </div>
 
-        <div class="form-group col-6 mb-4">
-            <div class="captcha-container">
-                <label class="form-label text-white">Verificación de seguridad:</label>
-                <div id="captchaImage" class="mb-2 captcha-image-container"></div>
-                <input type="text" class="form-control text-white rounded-0 bg-transparent" id="captchaAnswer" placeholder="Ingrese el texto" required>
-                <button type="button" class="btn btn-link p-0 mt-2 text-white" onclick="generateNewCaptcha()">
-                    <small>Generar nuevo</small>
-                </button>
-            </div>
-        </div>
+                                <div class="form-group col-12 mb-4">
+                                    <label class="text-white font-weight-bold mb-2">Verificación de seguridad</label>
+                                    <div class="captcha-container">
+                                        <div class="row no-gutters align-items-center">
+                                            
+                                            <div class="col-auto">
+                                                <div id="captchaImage" class="captcha-image-container" style="width: 300px; height: 120px; display: flex; align-items: center; justify-content: center;">
+                                                    </div>
+                                            </div>
 
-        <div class="form-group col-12 mb-0">
-            <button type="submit" class="btn btn-primary rounded w-md mt-3">Enviar</button>
-        </div>
-    </div>
-                    </form>
-                </div>
+                                            <div class="col pl-4">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <input type="text" class="form-control text-white rounded-0 bg-transparent" 
+                                                        id="captchaAnswer" placeholder="Código" style="max-width: 130px;" required>
+                                                    
+                                                    <button type="button" class="btn btn-link text-white ml-2 p-0" onclick="generateNewCaptcha()" style="white-space: nowrap;">
+                                                        <small><i class="ti-reload"></i> Generar nuevo</small>
+                                                    </button>
+                                                </div>
+                                                
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary rounded py-2 px-4" style="min-width: 220px;">
+                                                        Enviar Mensaje
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
             </div>
             <!-- Page Footer -->
             <footer class="mt-5 py-4 border-top border-secondary ">
@@ -199,18 +219,24 @@
                     </li>
                     <li class="list-body">
                         <p> Contáctanos y nos comunicaremos contigo dentro de 24 horas.</p>
-                        <p><i class="ti-location-pin text-primary"></i> Fernado Villalpando N° 48, Col Guadalupe Inn C.P
-                            01020, Alvaro
-                            Obregon CDMX.</p>
-                        <p><i class="ti-email text-primary"></i> contacto@selder.com.mx</p>
+                        
+                        <p>
+                            <i class="ti-location-pin text-primary"></i> 
+                            Fernado Villalpando N° 48, Col Guadalupe Inn C.P 01020, Alvaro Obregon CDMX.
+                        </p>
+
+                        <p>
+                            <i class="ti-mobile text-primary"></i> 
+                            +52 55 5662-5009
+                        </p>
+
+                        <p>
+                            <i class="ti-email text-primary"></i> 
+                            contacto@selder.com.mx
+                        </p>
+
                         <div class="social-links">
-                            <!--<a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
-                            <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>-->
-                        </div>
+                            </div>
                     </li>
                 </ul>
             </div><!-- End of Pre footer -->
