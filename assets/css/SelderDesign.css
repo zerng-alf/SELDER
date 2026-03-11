@@ -12420,3 +12420,110 @@ img {
 #commitment .text-white {
     color: #ffffff !important;
 }
+
+/* seection gelatina */
+
+.hero-gelatina-modern {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* Cambia la URL por la ruta de tu imagen descargada o el link directo */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), 
+               url('../imgs/imgFarmaco/gelatina-dorada.png'); /* Asegúrate de tener una imagen de alta calidad aquí */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Esto hace que la imagen se mueva lento al bajar */
+}
+
+.hero-gelatina-modern .text-primary {
+    color: #FAD02C !important;
+}
+
+.italic-style {
+    font-style: italic;
+    text-shadow: 0 0 20px rgba(250, 208, 44, 0.3);
+}
+
+.accent-line {
+    width: 60px;
+    height: 4px;
+    background: #FAD02C;
+    margin: 20px auto 30px;
+    border-radius: 2px;
+}
+
+/* Botón moderno con transparencia */
+.btn-outline-primary {
+    border: 2px solid #FAD02C;
+    color: #FAD02C;
+    background: transparent;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.btn-outline-primary:hover {
+    background: #FAD02C;
+    color: #222;
+    transform: scale(1.05);
+}
+
+/*pagina tableta.html*/
+/* Hero de Investigación y Desarrollo */
+.hero-id-tabletas {
+    height: 90vh;
+    background: 
+                url('../imgs/imgFarmaco/monton-pildoras.jpg'); /* Imagen de fondo de laboratorio */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+/* Efectos de Hover para las tarjetas de tecnología */
+.tech-card {
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Tipografía Selder */
+.text-primary {
+    color: #FAD02C !important;
+}
+
+
+/* Hero de I+D Gelatina Blanda */
+.hero-id-gelatina {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* Imagen de fondo que puedes usar del pack que te pasé antes */
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), 
+                url('../imgs/imgFarmaco/gelatina-azul.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-id-gelatina .accent-line {
+    width: 80px;
+    height: 4px;
+    background: #FAD02C;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* Hover en las tarjetas de investigación */
+.bg-white.shadow-sm:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
+    border-bottom: 4px solid #FAD02C;
+}

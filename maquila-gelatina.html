@@ -1,70 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Dudas, sugerencias o quejas - Laboratorios Selder.">
-    <meta name="author" content="Selder S.A. DE C.V.">
-    <title>Sugerencias - Selder</title>
+    <title>Maquila de Gelatina Blanda | Selder</title>
+    
+    <link rel="icon" type="image/png" href="assets/imgs/favicon.png">
 
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/SelderDesign.css">
 
     <style>
-        /* Estilos específicos basados en tus capturas */
-        .page-container {
-            padding-top: 120px;
-            padding-bottom: 80px;
-            background-color: #ffffff;
+        .hero-gelatina {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/imgs/imgFarmaco/bg-gelatina.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: white;
         }
-
-        .main-title {
-            font-size: 3rem;
-            color: #1a1a1a;
-            font-weight: 300;
-            margin-bottom: 2rem;
+        .tech-card {
+            border: none;
+            border-radius: 20px;
+            transition: transform 0.3s;
+            background: #fff;
         }
-
-        /* Resaltado azul exacto de tu imagen */
-        .highlight-box {
-            background-color: #3b71ca;
-            color: white !important;
-            padding: 0 10px;
-            border-radius: 4px;
-            display: inline-block;
-        }
-
-        .content-section {
-            border-top: 1px solid #dee2e6;
-            margin-top: 2rem;
-            padding-top: 4rem;
-        }
-
-        .info-heading {
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-
-        .info-text {
-            color: #555;
-            line-height: 1.8;
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .schedule-box {
-            margin-top: 2rem;
-            font-size: 1.1rem;
+        .tech-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 
-<body data-spy="scroll" data-target=".navbar">
+<body data-spy="scroll" data-target=".navbar" id="home">
 
-    <!-- Page Navbar -->
+        <!-- Page Navbar -->
     <nav id="scrollspy" class="navbar page-navbar navbar-light navbar-expand-md fixed-top bg-white" data-spy="affix"
         data-offset-top="20">
         <div class="container">
@@ -118,27 +90,78 @@
     </nav>
     <!-- End of Page Navbar -->
 
-    <div class="container page-container">
-        <h1 class="main-title">
-            Dudas, <span class="">sugerencias</span> o quejas.
-        </h1>
-
-        <div class="content-section">
-            <h5 class="info-heading">¿Tienes alguna duda, sugerencia o queja?</h5>
-            
-            <p class="info-text">
-                Laboratorios <strong>Selder</strong> pone a tu disposición la línea de atención directa: 
-                <strong> 55 5662-5009</strong>, sin costo desde cualquier parte de la República Mexicana.
-            </p>
-
-            <div class="schedule-box">
-                <p class="mb-2"><strong>El horario de atención es:</strong></p>
-                <p class="info-text">
-                    Lun. a vier. 8:00 a 17:00 hrs. Sáb. y Dom. cerrado.
-                </p>
+    <header class="hero-gelatina-modern">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="display-2 font-weight-bold text-white mb-2">
+                        Maquila de <br>
+                        <span class="text-primary italic-style">Gelatina Blanda</span>
+                    </h1>
+                    <div class="accent-line"></div>
+                    <p class="lead text-white mb-5 mx-auto" style="max-width: 650px; font-weight: 300; letter-spacing: 0.5px;">
+                        Tecnología de encapsulado líquido de alta precisión para el mercado global.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4">
+                    <h2 class=" fw-bold mb-4">Especialistas en Formas Farmacéuticas Sofisticadas</h2>
+                    <p>En Selder, la fabricación de <strong>gelatina blanda</strong> representa nuestra mayor fortaleza tecnológica. Este formato es la solución ideal para principios activos que requieren una biodisponibilidad superior o que presentan desafíos de estabilidad en formas sólidas tradicionales.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="ti-check text-primary mr-2"></i> Encapsulado en atmósfera controlada.</li>
+                        <li class="mb-2"><i class="ti-check text-primary mr-2"></i> Alta precisión en dosificación de activos líquidos.</li>
+                        <li class="mb-2"><i class="ti-check text-primary mr-2"></i> Cumplimiento estricto de normativas FDA y COFEPRIS.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <div class="after right"></div>
+                        <img src="assets/imgs/imgFarmaco/pastillas-cafes.png" class="w-100 rounded shadow" alt="Proceso de Gelatina Blanda">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h3 class="fw-bold">Capacidades de Nuestra Planta</h3>
+                    <div style="width: 50px; height: 3px; background: #FAD02C; margin: 15px auto;"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="tech-card p-5 h-100 text-center">
+                        <i class="ti-timer text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5 class="fw-bold">Alta Velocidad</h5>
+                        <p class="small text-muted">Líneas automatizadas capaces de procesar millones de cápsulas mensualmente con merma mínima.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="tech-card p-5 h-100 text-center">
+                        <i class="ti-palette text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5 class="fw-bold">Personalización</h5>
+                        <p class="small text-muted">Variedad de formas, tamaños y colores de gelatina para diferenciar su marca en el anaquel.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="tech-card p-5 h-100 text-center">
+                        <i class="ti-shield text-primary mb-3" style="font-size: 2.5rem;"></i>
+                        <h5 class="fw-bold">Aseguramiento</h5>
+                        <p class="small text-muted">Cada lote pasa por rigurosas pruebas de viscosidad, sellado y perfiles de disolución.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Section -->
     <section class="pb-0" style="padding-top: 15px;">
@@ -188,19 +211,17 @@
                     </li>
                     <li class="list-body">
                         <p> Contáctanos y nos comunicaremos contigo.</p>
-                        
                         <p>
-                            <i class="ti-location-pin text-primary"></i> 
-                            Fernado Villalpando N° 48, Col Guadalupe Inn C.P 01020, Alvaro Obregon CDMX.
+                            <i class="ti-location-pin text-primary"></i>                             Fernado Villalpando N° 48, Col Guadalupe Inn C.P 01020, Alvaro Obregon CDMX.
                         </p>
 
                         <p>
-                            <i class="ti-mobile text-primary"></i> 
+                            <i class="ti-mobile text-primary"></i>
                             +52 55 5662-5009
                         </p>
 
                         <p>
-                            <i class="ti-email text-primary"></i> 
+                            <i class="ti-email text-primary"></i>
                             contacto@selder.com.mx
                         </p>
 
@@ -221,8 +242,5 @@
     </section>
     <!-- End of Section -->
 
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-</body>
+    </body>
 </html>
