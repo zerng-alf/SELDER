@@ -279,76 +279,47 @@ document.addEventListener('DOMContentLoaded', function () {
             // B. VALIDACIÓN DE AUTORIZACIÓN DE DATOS
             const authOption = document.querySelector('input[name="autorizacion_datos"]:checked');
             if (!authOption) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Atención',
-                    text: 'Debe responder la pregunta de autorización de datos.',
-                    confirmButtonColor: '#FAD02C'
-                });
+                Swal.fire({ icon: 'warning', title: 'Atención', text: 'Debe responder la pregunta de autorización de datos.', confirmButtonColor: '#FAD02C' });
                 return;
             }
 
             if (authOption.value === "No acepto") {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'No se puede procesar 🛑',
-                    text: 'Su solicitud no podrá procesar la Sospecha de Reacción Adversa a Medicamentos (SRAM) sin su autorización para almacenar datos.',
-                    confirmButtonColor: '#d33',
-                    confirmButtonText: 'Entendido'
-                });
+                Swal.fire({ icon: 'error', title: 'No se puede procesar 🛑', text: 'Su solicitud requiere autorización para almacenar datos.', confirmButtonColor: '#d33' });
                 return;
             }
 
-            // C. VALIDACIÓN DE CAPTCHA
-            const captchaInput = document.getElementById('captchaAnswer');
-            if (captchaInput.value.trim().toLowerCase() !== currentCaptcha.toLowerCase()) {
+            // C. VALIDACIÓN DE GOOGLE reCAPTCHA (CORREGIDO)
+            const response = grecaptcha.getResponse(); // Para Farmaco (ajusta si usas otro widget id)
+            if (response.length === 0) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Error de Seguridad',
-                    text: 'El código del captcha es incorrecto.',
+                    text: 'Por favor, verifica que no eres un robot.',
                     confirmButtonColor: '#FAD02C'
                 });
-                captchaInput.value = '';
-                generateNewCaptcha();
                 return;
             }
 
             // D. ENVÍO CON EMAILJS
-            Swal.fire({
-                title: 'Enviando...',
-                text: 'Procesando su reporte',
-                allowOutsideClick: false,
-                didOpen: () => Swal.showLoading()
-            });
+            Swal.fire({ title: 'Enviando...', text: 'Procesando su reporte', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
 
-            // Cambiamos el fetch de n8n por EmailJS
             sendWithEmailJS(formFarmaco, 'service_Farmaco', 'template_farmaco')
                 .then(response => {
-                    Swal.fire({
-                        icon: 'success',
-                        title: '¡Reporte Enviado!',
-                        text: 'Gracias por su colaboración.',
-                        confirmButtonColor: '#A3C14A'
-                    }).then(() => {
+                    Swal.fire({ icon: 'success', title: '¡Reporte Enviado!', text: 'Gracias por su colaboración.', confirmButtonColor: '#A3C14A' })
+                    .then(() => {
                         formFarmaco.reset();
-                        if (typeof generateNewCaptcha === 'function') generateNewCaptcha();
+                        grecaptcha.reset(); // Resetear el captcha tras éxito
                         $('.collapse').collapse('hide');
                         $('#collapseOne').collapse('show');
                     });
                 })
                 .catch(error => {
                     console.error('Error EmailJS:', error);
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error',
-                        text: 'Hubo un problema al enviar mediante EmailJS. Intente más tarde.',
-                        confirmButtonColor: '#F85C70'
-                    });
+                    Swal.fire({ icon: 'error', title: 'Error', text: 'Hubo un problema al enviar mediante EmailJS.', confirmButtonColor: '#F85C70' });
                 });
         });
     }
 });
-
 
 // ===========================================
 // 6. VALIDACIÓN FORMULARIO CONTACTO (General)
@@ -360,16 +331,15 @@ document.addEventListener('DOMContentLoaded', function () {
         formContacto.addEventListener('submit', function (event) {
             event.preventDefault();
 
-            // 1. Validar CAPTCHA (Usando la variable correcta: currentCaptcha)
-            const userResponse = document.getElementById('captchaAnswer').value.trim();
-            if (userResponse.toLowerCase() !== currentCaptcha.toLowerCase()) {
+            // 1. Validar Google reCAPTCHA (CORREGIDO)
+            const googleResponse = grecaptcha.getResponse(); 
+            if (googleResponse.length === 0) {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Código incorrecto',
-                    text: 'Por favor, verifica el código de seguridad.',
+                    title: 'Seguridad',
+                    text: 'Por favor, verifica el código de seguridad (reCAPTCHA).',
                     confirmButtonColor: '#FAD02C'
                 });
-                generateNewCaptcha();
                 return;
             }
 
@@ -377,32 +347,17 @@ document.addEventListener('DOMContentLoaded', function () {
             const btn = event.target.querySelector('button[type="submit"]');
             if(btn) btn.disabled = true;
 
-            Swal.fire({
-                title: 'Enviando mensaje...',
-                text: 'Por favor espera un momento',
-                allowOutsideClick: false,
-                didOpen: () => Swal.showLoading()
-            });
+            Swal.fire({ title: 'Enviando mensaje...', text: 'Por favor espera un momento', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
 
             // 3. Enviar a EmailJS
-            // IMPORTANTE: Revisa que 'service_Farmaco' sea el ID real en tu panel de EmailJS
             emailjs.sendForm('service_Farmaco', 'template_contacto', this)
                 .then(function() {
-                    Swal.fire({
-                        icon: 'success',
-                        title: '¡Mensaje enviado!',
-                        text: 'Nos pondremos en contacto contigo pronto.',
-                        confirmButtonColor: '#008a76'
-                    });
+                    Swal.fire({ icon: 'success', title: '¡Mensaje enviado!', text: 'Nos pondremos en contacto contigo pronto.', confirmButtonColor: '#008a76' });
                     formContacto.reset();
-                    generateNewCaptcha();
+                    grecaptcha.reset(); // Resetear captcha
                 }, function(error) {
                     console.error('Error detallado:', error);
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error al enviar (400)',
-                        text: 'Revisa que el Template ID "template_contacto" sea correcto en EmailJS.'
-                    });
+                    Swal.fire({ icon: 'error', title: 'Error al enviar', text: 'Revisa la configuración de EmailJS.' });
                 })
                 .finally(() => {
                     if(btn) btn.disabled = false;

@@ -12527,3 +12527,38 @@ img {
     box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
     border-bottom: 4px solid #FAD02C;
 }
+
+
+
+/* //////////////// recaptch agoogle////////////// */
+
+/* Contenedor principal compacto */
+.captcha-btn-container {
+    gap: 20px; /* Separación precisa entre captcha y botón (puedes ajustarla) */
+    flex-wrap: wrap; /* En celulares, el botón bajará si no cabe */
+}
+
+/* Estilos para el botón amarillo que ya tienes */
+.btn-primary {
+    background-color: #FAD02C; /* Tu color amarillo exacto */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e6b800; /* Un amarillo más oscuro al pasar el mouse */
+}
+
+/* Ajustes responsivos para pantallas pequeñas (móvil) */
+@media (max-width: 576px) {
+    .captcha-btn-container {
+        justify-content: center !important; /* Centra ambos elementos en celular */
+        text-align: center;
+        gap: 10px; /* Reduce la separación en móvil */
+    }
+    
+    .g-recaptcha {
+        transform: scale(0.85); /* Reduce un poco el tamaño del captcha en móvil */
+        transform-origin: 0 0;
+    }
+}
