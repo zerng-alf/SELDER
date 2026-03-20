@@ -237,7 +237,7 @@ function sendDataToN8N(formElement, formType) {
 
 // Nueva función estable usando EmailJS
 function sendWithEmailJS(formElement, serviceID, templateID) {
-    return emailjs.sendForm(serviceID, templateID, formElement);
+return emailjs.sendForm(serviceID, templateID, formElement);
 }
 
 // ===========================================
@@ -332,7 +332,7 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
 
             // 1. Validar Google reCAPTCHA (CORREGIDO)
-            const googleResponse = grecaptcha.getResponse(); 
+            const googleResponse = grecaptcha.getResponse();
             if (googleResponse.length === 0) {
                 Swal.fire({
                     icon: 'error',
