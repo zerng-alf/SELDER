@@ -240,9 +240,9 @@ function sendWithEmailJS(formElement, serviceID, templateID) {
 return emailjs.sendForm(serviceID, templateID, formElement);
 }
 
-// ===========================================
+// =================================================
 // 5. VALIDACIÓN DEL FORMULARIO DE FARMACOVIGILANCIA
-// ===========================================
+// =================================================
 document.addEventListener('DOMContentLoaded', function () {
     const formFarmaco = document.getElementById('farmacoForm');
 
