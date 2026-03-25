@@ -11818,10 +11818,6 @@ img.tower {
   background: #FAD02C;
 }
 
-
-
-
-
 .portfolio-section .filters {
   border: 2px solid #dee2e6;
   border-radius: 100px;
@@ -12428,7 +12424,6 @@ img {
     display: flex;
     align-items: center;
     position: relative;
-    /* Cambia la URL por la ruta de tu imagen descargada o el link directo */
     background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), 
                url('../imgs/imgFarmaco/gelatina-dorada.png'); /* Asegúrate de tener una imagen de alta calidad aquí */
     background-size: cover;
@@ -12474,12 +12469,13 @@ img {
 /* Hero de Investigación y Desarrollo */
 .hero-id-tabletas {
     height: 90vh;
-    background: 
-                url('../imgs/imgFarmaco/monton-pildoras.jpg'); /* Imagen de fondo de laboratorio */
+    background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), 
+                url('../imgs/imgFarmaco/fondo.png'); /* Imagen de fondo de laboratorio */
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
+    background-attachment: fixed; /* Esto hace que la imagen se mueva lento al bajar */
     color: white;
 }
 
