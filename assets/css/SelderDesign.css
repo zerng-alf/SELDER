@@ -12562,3 +12562,120 @@ img {
         transform-origin: 0 0;
     }
 }
+
+/* =========================================================
+   MEDIA QUERIES - RESPONSIVE DESIGN SELDER
+   ========================================================= */
+
+/* 1. DISPOSITIVOS MÓVILES PEQUEÑOS Y MEDIANOS (Celulares) */
+@media (max-width: 575.98px) {
+    .display-1 { font-size: 3.5rem; }
+    .display-2 { font-size: 3rem; }
+    .display-3 { font-size: 2.5rem; }
+    .display-4 { font-size: 2.2rem; }
+    
+    section { padding: 50px 0; }
+    
+    .header, .header1, .header2, .header3, 
+    .hero-gelatina-modern, .hero-id-tabletas, .hero-id-gelatina {
+        height: auto;
+        min-height: 80vh;
+        padding: 80px 0;
+    }
+
+    .header-title { font-size: 1.8rem; }
+    
+    .about-wrapper { margin-left: 0; }
+    
+    .form-group-flex > div {
+        flex: 1 1 100%; /* Una sola columna en móvil */
+    }
+
+    .tabs-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tabs-container .tab-nav {
+        width: 100%;
+        margin-right: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}
+
+/* 2. TABLETAS (iPad, Tablets Android) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .display-1 { font-size: 4.5rem; }
+    .display-2 { font-size: 4rem; }
+    
+    section { padding: 70px 0; }
+    
+    .header, .header1, .header2, .header3 {
+        height: 500px;
+    }
+
+    .contact1 {
+        margin-top: 0 !important;
+    }
+
+    .about-wrapper .after {
+        width: 150px;
+    }
+}
+
+/* 3. PANTALLAS GRANDES Y EXTRA GRANDES (Desktops / TV) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px !important;
+    }
+
+    .header-content h6 {
+        font-size: 60px;
+    }
+
+    /* Mejora de legibilidad en pantallas muy anchas */
+    p {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Si el párrafo está dentro de una columna de texto, no centrarlo */
+    .col-md-5 p, .col-md-6 p, .col-lg-10 p {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* 4. AJUSTES ESPECÍFICOS PARA EL NAVBAR EN MÓVIL */
+@media (max-width: 991.98px) {
+    nav.page-navbar {
+        background-color: #fff !important; /* Forzar fondo blanco para que se vea el menú */
+    }
+    
+    nav.page-navbar .navbar-brand .text-dark {
+        color: #000 !important;
+    }
+
+    .navbar-collapse {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+}
+
+/* 5. FIX PARA ALTURA DE CARDS (Igualar alturas) */
+@media (min-width: 768px) {
+    .row.display-flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .row.display-flex > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
+    }
+}
