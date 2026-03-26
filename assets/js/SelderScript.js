@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // D. ENVÍO CON EMAILJS
             Swal.fire({ title: 'Enviando...', text: 'Procesando su reporte', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
 
-            sendWithEmailJS(formFarmaco, 'service_Farmaco', 'template_farmaco')
+            sendWithEmailJS(formFarmaco, 'service_pWeb-Selder-4zkq', 'template_farmaco')
                 .then(response => {
                     Swal.fire({ icon: 'success', title: '¡Reporte Enviado!', text: 'Gracias por su colaboración.', confirmButtonColor: '#A3C14A' })
                     .then(() => {
@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function () {
             Swal.fire({ title: 'Enviando mensaje...', text: 'Por favor espera un momento', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
 
             // 3. Enviar a EmailJS
-            emailjs.sendForm('service_Farmaco', 'template_contacto', this)
+            emailjs.sendForm('service_pWeb-Selder-4zkq', 'template_contacto', this)
                 .then(function() {
                     Swal.fire({ icon: 'success', title: '¡Mensaje enviado!', text: 'Nos pondremos en contacto contigo pronto.', confirmButtonColor: '#008a76' });
                     formContacto.reset();
