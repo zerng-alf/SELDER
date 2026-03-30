@@ -11173,17 +11173,55 @@ nav.page-navbar.affix .navbar-brand .text-dark {
 }
 
 .header {
-  background: #efefef url(../imgs/imgFarmaco/traba.jpg);
+  background: #efefef url(../imgs/img/SelderRecep4edit.png);
   background-size: cover;
-  background-position: top;
+  background-position: center; /* Mejor center que top para que no se corte el logo si hay uno */
   background-repeat: no-repeat;
   text-align: center;
   color: white;
-  position: relative;
   height: 695px;
   position: relative;
+  display: flex; /* Para centrar verticalmente el contenido */
+  align-items: center;
+  justify-content: center;
 }
 
+.header-title {
+  font-size: 3rem; /* Tamaño grande para el impacto */
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Para que se lea perfecto */
+}
+
+.header-title span {
+  color: #ffcc00; /* Un color de acento (opcional) para resaltar la idea */
+  display: block; 
+}
+
+.header-subtitle {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* El overlay ayuda a que el texto blanco resalte */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Capa oscura ligera */
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2; /* Para que el texto quede por encima del overlay */
+}
 /*header productos*/
 .header1 {
   background: #efefef url(../imgs/imgFarmaco/linea-produccion.png);
@@ -11227,7 +11265,7 @@ nav.page-navbar.affix .navbar-brand .text-dark {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgb(28 88 125 / 40%);
+  background: rgb(0 0 0 / 28%);
 }
 
 .header .header-content {
@@ -11244,8 +11282,8 @@ nav.page-navbar.affix .navbar-brand .text-dark {
 .header .header-content p {
   color: white;
   opacity: 1;
-  margin-bottom: 5px;
-  font-size: calc(12px + (16 - 14) * ((100vw - 300px) / (1200 - 300)));
+  margin-bottom: 67px;
+  font-size: calc(22px + (16 - 14) * ((100vw - 300px) / (1200 - 300)));
 }
 
 .header .header-content h6 {
