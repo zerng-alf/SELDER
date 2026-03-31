@@ -11173,7 +11173,7 @@ nav.page-navbar.affix .navbar-brand .text-dark {
 }
 
 .header {
-  background: #efefef url(../imgs/img/SelderRecep4edit.png);
+  background: #efefef url(../imgs/img/header.png);
   background-size: cover;
   background-position: center; /* Mejor center que top para que no se corte el logo si hay uno */
   background-repeat: no-repeat;
@@ -11222,6 +11222,8 @@ nav.page-navbar.affix .navbar-brand .text-dark {
   position: relative;
   z-index: 2; /* Para que el texto quede por encima del overlay */
 }
+
+
 /*header productos*/
 .header1 {
   background: #efefef url(../imgs/imgFarmaco/linea-produccion.png);
@@ -11271,7 +11273,7 @@ nav.page-navbar.affix .navbar-brand .text-dark {
 .header .header-content {
   position: absolute;
   width: 100%;
-  top: 50%;
+  top: 59%;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
