@@ -12619,6 +12619,12 @@ img {
         padding: 80px 0;
     }
 
+        .header {
+        height: auto;
+        min-height: 5px;
+        padding: 80px 0;
+    }
+
     .header-title { font-size: 1.8rem; }
     
     .about-wrapper { margin-left: 0; }
@@ -12722,6 +12728,7 @@ img {
     display: flex;
     align-items: center; /* Centrado vertical moderno */
     justify-content: center;
+        background-attachment: fixed;
   }
 
   .header-content {
@@ -12768,10 +12775,59 @@ img {
   .header .header-content p {
   color: white;
   opacity: 1;
-  margin-bottom: 7px;
+  margin-bottom: 25px;
   font-size: calc(22px + (16 - 14) * ((100vw - 300px) / (1200 - 300)));
 }
 
 }
 
+@media (max-width: 576px) {
+  .header {
+    /* Ajustamos la altura para que la foto no se estire infinito */
+    height: 250px !important; 
+    
+    /* "contain" asegura que se vea TODA la foto, 
+       "cover" la ajusta al ancho del cel sin cortes feos */
+    background-size: cover !important; 
+    background-position: center center !important;
+    display: flex;
+    align-items: flex-end; /* Bajamos el texto al final para que luzca la foto arriba */
+    padding-bottom: 40px;
+  }
+
+  .header-content {
+    position: relative !important;
+    top: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    padding: 0 15px !important;
+  }
+
+  .header-title {
+    font-size: 1.4rem !important; /* Texto pequeño y elegante */
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9) !important; /* Más sombra para leer sobre la foto */
+  }
+
+  .header-title span {
+    font-size: 1.2rem !important;
+    display: inline; /* En cel mejor que sea corrido para ganar espacio */
+    color: #ffcc00;
+  }
+
+  .header-subtitle {
+    font-size: 0.9rem !important; /* Subtítulo discreto */
+    margin-bottom: 15px;
+    font-style: italic;
+    opacity: 1 !important;
+  }
+
+  /* Si tienes el botón, hazlo compacto */
+  .btn-outline-light {
+    padding: 8px 20px !important;
+    font-size: 0.9rem !important;
+  }
+}
 
