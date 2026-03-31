@@ -12715,3 +12715,63 @@ img {
         flex-direction: column;
     }
 }
+
+@media (min-width: 1200px) {
+  .header {
+    height: 950px !important; /* Más altura para que la imagen luzca */
+    display: flex;
+    align-items: center; /* Centrado vertical moderno */
+    justify-content: center;
+  }
+
+  .header-content {
+    position: relative !important;
+    top: 0 !important; /* Quitamos los porcentajes que lo mueven raro */
+    transform: none !important;
+    max-width: 1100px; /* Evita que el texto toque los bordes del monitor */
+    margin: 0 auto;
+  }
+
+  .header-title {
+    font-size: 2.5rem !important; /* Tamaño gigante y legible */
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px; /* Toque moderno: letras un poco más juntas */
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    margin-top: 109px !important; /* Ajuste fino para que quede bien con la imagen */
+  }
+
+  .header-title span {
+    font-size: 2.8rem;
+    display: block;
+    color: #ffcc00; /* Color de acento para romper la monotonía */
+    margin-top: 10px;
+  }
+
+  .header-subtitle {
+    font-size: 2rem !important;
+    font-weight: 300;
+    letter-spacing: 1px;
+    opacity: 1 !important;
+    max-width: 800px;
+    margin: 0 auto 35px auto;
+  }
+
+  /* Botón más grande para pantallas grandes */
+  .btn-outline-light {
+    padding: 15px 40px !important;
+    font-size: 1.2rem !important;
+    border-width: 2px !important;
+  }
+
+  .header .header-content p {
+  color: white;
+  opacity: 1;
+  margin-bottom: 7px;
+  font-size: calc(22px + (16 - 14) * ((100vw - 300px) / (1200 - 300)));
+}
+
+}
+
+
