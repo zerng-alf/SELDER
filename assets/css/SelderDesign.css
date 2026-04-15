@@ -84,8 +84,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
 }
 
-
-
 p {
   margin-top: 0;
   margin-bottom: 1rem;
@@ -8091,23 +8089,23 @@ button.bg-dark:focus {
   .flex-md-grow-0 {
     -webkit-box-flex: 0 !important;
     -webkit-flex-grow: 0 !important;
-        -ms-flex-positive: 0 !important;
+    -ms-flex-positive: 0 !important;
             flex-grow: 0 !important;
   }
   .flex-md-grow-1 {
     -webkit-box-flex: 1 !important;
     -webkit-flex-grow: 1 !important;
-        -ms-flex-positive: 1 !important;
+    -ms-flex-positive: 1 !important;
             flex-grow: 1 !important;
   }
   .flex-md-shrink-0 {
     -webkit-flex-shrink: 0 !important;
-        -ms-flex-negative: 0 !important;
+      -ms-flex-negative: 0 !important;
             flex-shrink: 0 !important;
   }
   .flex-md-shrink-1 {
     -webkit-flex-shrink: 1 !important;
-        -ms-flex-negative: 1 !important;
+      -ms-flex-negative: 1 !important;
             flex-shrink: 1 !important;
   }
   .justify-content-md-start {
@@ -11667,9 +11665,7 @@ section.height-auto {
   }
 }
 
-
 /*/carrusel//*/
-
 /* --- Estilos para el Carrusel de Contenedores de Productos --- */
 
 /* Asegura que la sección contenedora permita el flujo normal */
@@ -11703,10 +11699,7 @@ opacity: 1; /* Hace visible el activo */
   z-index: 10; /* Para que esté sobre cualquier elemento que se desborde */
 }
 
-
-
 /*////CAPCHA//*/
-
 
 /* Estilos esenciales para el CAPTCHA */
 .captcha-image-container {
@@ -11729,9 +11722,6 @@ opacity: 1; /* Hace visible el activo */
 .captcha-container button:hover {
   text-decoration: underline;
 }
-
-
-
 
 /*Tabs nav section*/
 .tabs-container {
@@ -11852,7 +11842,6 @@ img.tower {
     line-height: 90px !important;
   }
 }
-
 
 .color1 {
   background: #FAD02C;
@@ -12042,10 +12031,6 @@ img.tower {
   display: block;
 }
 
-
-
-/*///////////////////////////*/
-
 /* Estilos básicos para ocultar los pasos y manejar la navegación */
 .form-step {
     display: none !important; /* Inicialmente, todos los pasos están ocultos */
@@ -12222,9 +12207,6 @@ html, body {
     }
 }
 
-/* Hacer los headers flexibles */
-
-
 /* Corregir el margen negativo que deforma la sección de contacto */
 .contact1 {
     margin-top: -5rem !important; /* Reducido de 15rem a 5rem */
@@ -12277,7 +12259,6 @@ img {
     font-size: 20px;
     display: block;
 }
-
 
 /*///////////////// Sombra que sigue la forma del frasco (no cuadrada) ////////////////////*/
 /* Contenedor para alinear la sombra de base */
@@ -12374,7 +12355,7 @@ img {
     width: 110%;
     height: 120%;
     opacity: 0.04; /* Casi invisible para no distraer */
-    background-image: 
+    background-image:
         radial-gradient(circle at 20% 30%, #008a76 15px, transparent 16px),
         radial-gradient(circle at 25% 35%, #008a76 10px, transparent 11px),
         linear-gradient(45deg, transparent 34%, #008a76 35%, #008a76 36%, transparent 37%);
@@ -12400,7 +12381,6 @@ img {
     background: radial-gradient(circle, rgba(250, 208, 44, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
     z-index: -1;
 }
-
 
 #about .display-4 {
     font-size: 3.2rem;
@@ -12431,9 +12411,7 @@ img {
     }
 }
 
-
 /* Detalle de borde lateral para Misión/Visión */
-/* Estilo para el mosaico de ADN */
 #commitment .row.no-gutters {
     transition: transform 0.4s ease;
 }
@@ -12464,7 +12442,7 @@ img {
     display: flex;
     align-items: center;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), 
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
                url('../imgs/imgFarmaco/gelatina-dorada.png'); /* Asegúrate de tener una imagen de alta calidad aquí */
     background-size: cover;
     background-position: center;
@@ -12509,7 +12487,7 @@ img {
 /* Hero de Investigación y Desarrollo */
 .hero-id-tabletas {
     height: 90vh;
-    background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), 
+    background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
                 url('../imgs/imgFarmaco/fondo.png'); /* Imagen de fondo de laboratorio */
     background-size: cover;
     background-position: center;
@@ -12534,7 +12512,6 @@ img {
     color: #FAD02C !important;
 }
 
-
 /* Hero de I+D Gelatina Blanda */
 .hero-id-gelatina {
     height: 90vh;
@@ -12542,7 +12519,7 @@ img {
     align-items: center;
     position: relative;
     /* Imagen de fondo que puedes usar del pack que te pasé antes */
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), 
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
                 url('../imgs/imgFarmaco/gelatina-azul.png');
     background-size: cover;
     background-position: center;
@@ -12564,19 +12541,17 @@ img {
     border-bottom: 4px solid #FAD02C;
 }
 
-
-
 /* //////////////// recaptch agoogle////////////// */
 
 /* Contenedor principal compacto */
 .captcha-btn-container {
-    gap: 20px; /* Separación precisa entre captcha y botón (puedes ajustarla) */
+    gap: 20px; /* Separación precisa entre captcha y botón */
     flex-wrap: wrap; /* En celulares, el botón bajará si no cabe */
 }
 
 /* Estilos para el botón amarillo que ya tienes */
 .btn-primary {
-    background-color: #FAD02C; /* Tu color amarillo exacto */
+    background-color: #FAD02C;
     border: none;
     transition: background-color 0.3s ease;
 }
@@ -12592,7 +12567,6 @@ img {
         text-align: center;
         gap: 10px; /* Reduce la separación en móvil */
     }
-    
     .g-recaptcha {
         transform: scale(0.85); /* Reduce un poco el tamaño del captcha en móvil */
         transform-origin: 0 0;
@@ -12609,10 +12583,9 @@ img {
     .display-2 { font-size: 3rem; }
     .display-3 { font-size: 2.5rem; }
     .display-4 { font-size: 2.2rem; }
-    
     section { padding: 50px 0; }
-    
-    .header, .header1, .header2, .header3, 
+
+    .header, .header1, .header2, .header3,
     .hero-gelatina-modern, .hero-id-tabletas, .hero-id-gelatina {
         height: auto;
         min-height: 80vh;
@@ -12626,9 +12599,9 @@ img {
     }
 
     .header-title { font-size: 1.8rem; }
-    
+
     .about-wrapper { margin-left: 0; }
-    
+
     .form-group-flex > div {
         flex: 1 1 100%; /* Una sola columna en móvil */
     }
@@ -12652,9 +12625,9 @@ img {
 @media (min-width: 576px) and (max-width: 991.98px) {
     .display-1 { font-size: 4.5rem; }
     .display-2 { font-size: 4rem; }
-    
+
     section { padding: 70px 0; }
-    
+
     .header, .header1, .header2, .header3 {
         height: 500px;
     }
@@ -12684,7 +12657,6 @@ img {
         margin-left: auto;
         margin-right: auto;
     }
-    
     /* Si el párrafo está dentro de una columna de texto, no centrarlo */
     .col-md-5 p, .col-md-6 p, .col-lg-10 p {
         margin-left: 0;
@@ -12697,7 +12669,7 @@ img {
     nav.page-navbar {
         background-color: #fff !important; /* Forzar fondo blanco para que se vea el menú */
     }
-    
+
     nav.page-navbar .navbar-brand .text-dark {
         color: #000 !important;
     }
@@ -12710,7 +12682,7 @@ img {
     }
 }
 
-/* 5. FIX PARA ALTURA DE CARDS (Igualar alturas) */
+/* 5. FIX PARA ALTURA DE CARDS */
 @media (min-width: 768px) {
     .row.display-flex {
         display: flex;
@@ -12733,7 +12705,7 @@ img {
 
   .header-content {
     position: relative !important;
-    top: 0 !important; /* Quitamos los porcentajes que lo mueven raro */
+    top: 0 !important;
     transform: none !important;
     max-width: 1100px; /* Evita que el texto toque los bordes del monitor */
     margin: 0 auto;
@@ -12743,10 +12715,10 @@ img {
     font-size: 2.5rem !important; /* Tamaño gigante y legible */
     font-weight: 800;
     line-height: 1.1;
-    letter-spacing: -1px; /* Toque moderno: letras un poco más juntas */
+    letter-spacing: -1px; /* letras un poco más juntas */
     margin-bottom: 25px;
     text-transform: uppercase;
-    margin-top: 109px !important; /* Ajuste fino para que quede bien con la imagen */
+    margin-top: 109px !important;
   }
 
   .header-title span {
@@ -12777,18 +12749,13 @@ img {
   opacity: 1;
   margin-bottom: 25px;
   font-size: calc(22px + (16 - 14) * ((100vw - 300px) / (1200 - 300)));
-}
-
+  }
 }
 
 @media (max-width: 576px) {
   .header {
-    /* Ajustamos la altura para que la foto no se estire infinito */
-    height: 250px !important; 
-    
-    /* "contain" asegura que se vea TODA la foto, 
-       "cover" la ajusta al ancho del cel sin cortes feos */
-    background-size: cover !important; 
+    height: 250px !important;
+    background-size: cover !important;
     background-position: center center !important;
     display: flex;
     align-items: flex-end; /* Bajamos el texto al final para que luzca la foto arriba */
